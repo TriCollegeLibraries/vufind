@@ -1,0 +1,60 @@
+<?
+    // Set page title.
+    $this->headTitle($this->translate('Tripod | Digitized Archives Home'));
+
+    // Set default value if necessary:
+    if (!isset($this->searchClassId)) {
+        $this->searchClassId = 'DigitalArchives';
+    }
+
+    // Load search actions and settings (if any):
+    $options = $this->searchOptions($this->searchClassId);
+    $basicSearch = $options->getSearchAction();
+    $advSearch = $options->getAdvancedSearchAction();
+    // This re-renders the searchbox with the searchclassid set as desired.
+    // it's actually inserted in the page in layout.phtml.
+    $this->layout()->searchbox = $this->render('search/searchbox.phtml');
+?>
+    <div class="bookscontent">
+    <div class="booksright">
+      <h2><img src="<?=$this->imageLink('magnifyglass.png')?>" alt="" border="0" /> 
+      Search Tips</h2>
+          <span style="font-size:2pt;"><br /></span>
+    <strong>Phrase Searching and Title Searching</strong> <br />
+          Type quotation marks around the phrase.
+    <p><span class="greentext">&quot;Haverford history&quot;</span> will give more precise  results than <span class="greentext">Haverford history</span>.</p>
+          <strong>Excluding Words or Phases</strong>
+          Type NOT and then type the word or phrase to exclude.
+          <p class="greentext">gymnasium NOT old</p>
+    <strong>Wildcard Searching</strong><br />
+    If you want to search  for multiple variations of a word, you can substitute a special symbol (called  a &quot;wildcard&quot;) for one or more letters.<br /><br />
+    You can use * to represent 0 or many characters. <br />
+    You can use ? to represent one single character. <br />
+    <br />
+    <span class="greentext">alum*</span> will find alumni, alumna, alumnae, etc., and <span class="greentext">wom?n</span> will find woman, women and womyn.<br />
+    </div>
+
+    <div class="booksmiddle">
+      <strong>Not finding what you need?</strong> Try searching Triptych directly at <a href="http://triptych.brynmawr.edu" target="_blank">triptych.brynmawr.edu</a>.
+      <p>&nbsp;</p>
+      <p><img src="<?=$this->imageLink('mapICON.png')?>" alt="" border="0"/> It is also possible the items or collections you are looking for have not yet been digitized. Contact the appropriate institution directly to see if they can help you locate the primary source that you need.
+      <br />
+      <ul style="text-align: left; padding-left: 10px;">
+        <li><a href="http://www.brynmawr.edu/library/speccoll/index.html" target="_blank">Bryn Mawr College Library Special Collections</a>
+        <li><a href="http://www.swarthmore.edu/library/peace/" target="_blank">Swarthmore College Peace Collection</a></li>
+        <li><a href="http://www.haverford.edu/library/special/" target="_blank">Haverford College Library Special Collections</a></li>
+        <li><a href="http://www.swarthmore.edu/academics/friends-historical-library.xml" target="_blank">Friends Historical Library of Swarthmore College</a></li>
+      </ul>
+      <p>&nbsp;</p>
+    </div>
+
+    <div class="booksleft">
+      <p><img src="<?=$this->imageLink('digcolICON.jpg')?>" alt="" border="0" />
+     <strong>Digitized Archives</strong> features items from Triptych, a digital initiative of the Bryn Mawr, Haverford, and Swarthmore College Libraries.</p>
+<br />
+<p><strong>Digitized Archives</strong> includes merged items from Bryn Mawr College Special Collections and Visual Resources, Haverford College Quaker and Special Collections, Friends Historical Library of Swarthmore College, and the Swarthmore College Peace Collection. Digital Collections includes a variety of images and text-based materials from each college's archives, digitized historical and manuscript collections, and other primary sources. </p>
+<p>&nbsp;</p>
+    </div>
+
+    <div class="clear"></div>
+    </div>

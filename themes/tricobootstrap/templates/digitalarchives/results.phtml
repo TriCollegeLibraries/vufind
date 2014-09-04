@@ -1,0 +1,9 @@
+<?
+    $lookfor = $this->results->getUrlQuery()->isQuerySuppressed() ? '' : $this->params->getDisplayQuery();
+
+    // Load standard settings from the default search results screen:
+    echo $this->render('search/results.phtml');
+    $this->layout()->homeRoute = 'digitalarchives-home';
+
+    $this->headTitle($this->translate('Digitized Archives Search Results') . (empty($lookfor) ? '' : " - {$lookfor}"));
+?>

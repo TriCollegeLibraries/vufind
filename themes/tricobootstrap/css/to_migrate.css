@@ -1,0 +1,282 @@
+@CHARSET "UTF-8";
+
+/** General ***/
+
+body {
+    margin: 1.5em 0;
+    background-color: #706f72;
+}
+
+/* adjust some default blueprint styles */
+/* trico edit 2013-01-02 ah - .2 was too small; making it .5 */
+p,ul,dl,form,input,textarea,select,label { margin-bottom: 0.5em; }
+h1 { font-size: 1.5em; margin-top: 0.5em; margin-bottom: 0.5em; padding-bottom: 0.5em; }
+
+.container {
+    border-radius: none;
+    -moz-border-radius: none;
+    -webkit-border-radius: none;
+    border: none;
+    /* background: none repeat scroll 0 0 #706F72; */
+background: none repeat scroll 0 0 #FFF;
+    box-shadow: none;
+}
+
+/*
+.searchbox a { color:#122444; }
+*/
+
+
+
+/** Forms **/
+
+label {
+    font-size: 12px;
+}
+
+.searchFormKeepFilters {
+    font-size: 12px;
+}
+
+/*
+.breadcrumbs,.main,.footer {
+    padding: .8em;
+    background: #fff;
+}
+/*
+.searchbox {
+    /*padding:34px 0 24px 54px;*/
+  /*  padding: 20px 54px 25px;
+    text-align:center;
+    margin: 0 auto;
+    background: #fff;
+    text-align: left;
+}
+*/
+#sublinks {
+    width: 844px;
+    text-align: left;
+    border: 1px solid #000;
+}
+
+#sublinks table {
+    width:740px;
+    border: 1px solid #000;
+    padding: 0;
+}
+
+#sublinks td {
+    text-align:left;
+    border: 1px solid #000;
+}
+
+#logo {
+  text-decoration:none;
+}
+
+#headerRight {
+    width: 525px;
+}
+
+h1.title {display: inline; }
+
+#subnav {
+    width: 565px;
+    position:relative;
+    border=0;
+    float:right;
+    color: #000;
+    padding: 2px;
+    margin: 0;
+    background: #fff;
+}
+
+/** Buttons to do "bulk" actions **/
+
+div.bulkActionButtons {
+    /* trico edit 2012-12-10 ah - fix chrome display cutting off top of icon */
+    line-height: 1.5em;
+}
+div.bulkActionButtons input, div.bulkActionButtons label, div.bulkActionButtons span {
+    /* trico edit 2012-12-10 ah - fix chrome display cutting off top of icon */
+     margin: 0 10px 2px 0;
+}
+div.bulkActionButtons input.button {
+    /* trico edit 2012-12-10 ah - fix chrome display cutting off top of icon */
+    line-height:inherit;
+}
+
+.fulltextarticles {
+    color:#009900;
+    text-decoration:none;
+}
+
+.nofulltextarticles {
+    color:#cc0000;
+    text-decoration:none;
+}
+
+/** Publication Year facet */
+.yearbox {
+    width: 45px;
+}
+
+/* TRICO edits 2012-10-12 ah - make it look more like results lists */
+table.datagrid th {
+    border-bottom: 2px solid rgb(221,221,221);
+    text-align: left;
+    padding: 5px 15px 5px 15px;
+}
+
+/* these 2 border tweaks keep the thick line under header row
+ *  * from sticking out over the edge of the table
+ *   */
+table.datagrid td:first-child {
+  border-left: none;
+}
+table.datagrid td:last-child {
+  border-right: none;
+}
+table.datagrid tbody tr:nth-child(even) td {
+    background:#eee;
+}
+p.datasummary {
+    margin:2em 0em 2em 1em;
+}
+
+.resulthead {
+    margin-bottom:.5em;
+}
+
+.resultTitle {
+   font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   background:none;
+   font-size:10.5pt;
+}
+
+.fav {
+    background-image:url(../images/silk/book_fav.png);
+}
+
+.extdbs{
+    color:#0066cc;
+    padding-right:2px;
+}
+
+.findit {
+    width:200px;
+    background-image:url(../images/findit.gif);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding: .5em .5em .5em 100px;
+}
+
+.findit_record {
+    width:200px;
+    background-image:url(../images/findit.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: .5em .5em .5em 100px;
+}
+
+/* --- Bookings --- */
+.bookingCancel {
+    background-image:url(../images/fugue/holdCancel.png);
+    background-repeat:no-repeat;
+    background-position: left;
+    padding:.5em .5em .5em 20px;
+    margin-right:1em;
+}
+
+.bookingCancelAll {
+    background-image:url(../images/fugue/holdCancelAll.png);
+    background-repeat:no-repeat;
+    background-position: left;
+    padding:.5em .5em .5em 20px;
+    margin-right:1em;
+}
+
+.bookingsMessage {
+    margin-top: 1em;
+}
+
+/***** Pagination *****/
+
+.pagination {
+    padding:0 0 1em 0;
+    margin: 0 0 1.5em 0;
+}
+
+/* off campus message */
+.offcmp {
+    background-color:#839cbb;
+    padding: 15px;
+    text-align: center;
+}
+
+.offcmp h2 {
+    line-height:1.5;
+    letter-spacing: .05em;
+    font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+    color:#000;
+    background:none;
+    font-weight: bold;
+    font-size:11pt;
+}
+
+/* Hybrid Landing Page */
+#bd {
+  height: auto;
+  background-color: #FFF;
+  margin:0 5px;
+  padding-bottom: 15px;
+}
+
+/*****************Channels*******************/
+#yui-main {
+  padding: 5px;
+  float: left;
+  padding-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.yui-b first contentbox {
+  padding: 5px;
+}
+
+.content {
+  padding:0px 0 10px 0;
+  background-color:#fff;
+}
+
+.content yui-b first contentbox {
+  border: 1px solid #ccc;
+}
+
+#primoDeferredResults, #guidesDeferredResults {
+  padding: 5px;
+  float: right;
+  padding-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+
+/* --- Util --- */
+.hidden { display: none; }
+.alignleft { float: left; margin: 0 7px 2px 0; }
+.vspacer { width:10px; height:30px; }
+
+/******************** Thumbnail Hover *******************/
+.thumb:hover {
+  opacity:0.85;
+  filter:alpha(opacity=85); /* For IE8 and earlier */
+}
+
+/********** google books preview **********/
+#gbsviewer {
+    text-align: center;
+    width: 600px;
+    height: 500px;
+}
+

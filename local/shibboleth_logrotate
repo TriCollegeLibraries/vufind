@@ -1,0 +1,10 @@
+# vufind logs logrotate settings
+# symlink to this in /etc/logrotate.d 
+/var/log/shibboleth/*.log {
+    weekly
+    rotate 12
+    copytruncate
+    missingok
+    notifempty
+    dateext
+}

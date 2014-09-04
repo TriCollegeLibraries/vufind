@@ -1,0 +1,125 @@
+import java.util.Set;
+// using LinkedHashSet gives us an order guarantee
+import java.util.LinkedHashSet;
+import java.util.ArrayList;
+import java.util.Integer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.marc4j.marc.Record;
+import org.marc4j.marc.DataField;
+import org.marc4j.marc.Subfield;
+import org.solrmarc.tools.CallNumUtils;
+org.solrmarc.index.SolrIndexer indexer = null;
+
+
+/**
+ * Normalize all LCCN in the record for sorting
+ * @param lccn
+ * @return Normalized LCCN
+ */
+public Set getSortLccns(Record record, String fieldSpec) {
+
+    lccns = getRawLccnStrings(record, fieldSpec);
+    String recordID = "1"; // used for error messages
+
+    Set sort_lccns = new LinkedHashSet();
+    for (String lccn : lccns) {
+        try {
+            sort_lccns.add(CallNumUtils.getLCShelfkey(lccn, recordID));
+        } catch(Exception e) {
+            // call number must've been weird / bad
+            print("getSortLccns lccn not added: " + lccn + "; " + e);
+        }
+    }
+    return sort_lccns;
+}
+
+/**
+ * Normalize first LCCN in the record for sorting
+ * @param lccn
+ * @return Normalized LCCN
+ */
+public String getSortLccn(Record record, String fieldSpec) {
+    lccns = getSortLccns(record, fieldSpec);
+    if (lccns.isEmpty()) {
+        return null;
+    }
+    array = lccns.toArray();
+    return array[0];
+}
+
+/**
+ * Normalize all LCCN in the record for searching
+ * @param lccn
+ * @return Normalized LCCN
+ */
+public Set getSearchLccns(Record record, String fieldSpec) {
+    lccns = getRawLccnStrings(record, fieldSpec);
+
+    Set search_lccns = new LinkedHashSet();
+    if (lccns.size() > 0) {
+        for (String lccn : lccns) {
+            // strip everything that's not alphanumeric or a period
+            clean = lccn.replaceAll("[^a-zA-Z0-9.]", "");
+            search_lccns.add(clean.toUpperCase());
+        }
+    }
+    return search_lccns;
+}
+
+
+private Set getRawLccnStrings(Record record, String fieldSpec) {
+    Set lccns = new LinkedHashSet();
+    if (fieldSpec != null) {
+        // separate fieldSpec into field and subfields
+        Matcher numbers = Pattern.compile("\\d*").matcher(fieldSpec);
+        Matcher letters = Pattern.compile("[a-zA-Z]").matcher(fieldSpec);
+        String field = "";
+        if (numbers.find()) {
+            field = numbers.group();
+        }
+        else {
+            // invalid fieldspec
+            return lccns;
+        }
+        ArrayList subfields = new ArrayList();
+        while (letters.find()) {
+            subfields.add(letters.group().charAt(0));
+        }
+        // get all fields -- seems to be the only way to access indicators
+        List datafields = record.getDataFields();
+        // loop through them, grab those with our tag and indicators
+        for (DataField df : datafields) {
+            if (df.getTag().equals(field)
+                    && (df.getIndicator1() == '0')
+                    && (df.getIndicator2() == '1')
+                ){
+                lccn_str = "";
+                if (!subfields.isEmpty()) {
+                    // only get specified subfields
+                    for (char sf : subfields) {
+                        if (df.getSubfield(sf) != null) {
+                            lccn_str += df.getSubfield(sf).getData();
+                        }
+                    }
+                }
+                else {
+                    // get list of subfields
+                    allsubfields = df.getSubfields(); 
+                    for (Subfield sf : allsubfields) {
+                        lccn_str += sf.getData();
+                    }
+                }
+                if (lccn_str.length() > 0) {
+                    //print("lccn_str = " + lccn_str);
+                    lccns.add(lccn_str);
+                }
+            }
+        }
+    }
+    return lccns;
+}
+
+public print(String s) {
+    System.out.println(s);
+}

@@ -1,0 +1,37 @@
+<?
+    // Set page title.
+    $this->headTitle($this->translate('Table of Contents') . ': ' . $this->driver->getBreadcrumb());
+
+    $toc = $this->driver->getTOC();
+?>
+<? if (!empty($toc['970'])): ?>
+  <strong><?=$this->transEsc('Table of Contents')?>: </strong>
+  <ul class="toc">
+    <? foreach ($toc['970'] as $thisField): ?>
+      <li>
+        <? $last_key = end(array_keys($thisField)); ?>
+        <? foreach ($thisField as $key => $subField): ?>
+          <?=$this->escapeHtml($subField)?>
+          <? if($last_key != $key): ?>
+            <?=$this->transEsc('/') ?>
+          <? endif; ?>
+        <? endforeach; ?>
+      </li>
+    <? endforeach; ?>
+<? elseif (!empty($toc['505'])): ?>
+  <strong><?=$this->transEsc('Table of Contents')?>: </strong>
+  <ul class="toc">
+      <? if(is_array($toc['505'])): ?>
+        <? foreach ($toc['505'] as $line): ?>
+          <? if(substr($line, -3) == ' --'): ?>
+            <? $line = substr($line, 0, -3); ?>
+          <? endif; ?>
+          <li><?=str_replace(" --", "</li><li>",$line)?></li>
+        <? endforeach; ?>
+      <? else: ?>
+        <li><?=str_replace(" --", "</li><li>", $toc['505']) ?></li> 
+      <? endif; ?>
+  </ul>
+<? else: ?>
+  <?=$this->transEsc("Table of Contents unavailable")?>.
+<? endif; ?>

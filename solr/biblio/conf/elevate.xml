@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!-- If this file is found in the config directory, it will only be
+     loaded once at startup.  If it is found in Solr's data
+     directory, it will be re-loaded every commit.
+-->
+
+<elevate>
+
+ <query text="america history and life">
+  <doc id=".b2449753" />
+  <doc id=".b2242946" />
+  <doc id=".b1995558" />
+  <doc id=".b1954320" />
+  <doc id=".b1951446" />
+  <doc id=".b1947696" />
+  <doc id=".b1948012" />
+  <doc id=".b1951850" />
+  <doc id=".b1939432" />
+ </query>
+
+
+ <query text="Ancestry">
+  <doc id=".b2728043" />
+ </query>
+
+ <query text="Année philologique">
+  <doc id=".b2616141" />
+  <doc id=".b1576549" />
+ </query>
+
+ <query text="Annual Reviews">
+  <doc id=".b3342813" />
+  <doc id=".b3243977" />
+ </query>
+
+ <query text="Art Index">
+  <doc id=".b2292501" />
+  <doc id=".b1577575" />
+ </query>
+
+ <query text="Bibliography of Asian Studies">
+  <doc id=".b2398373" />
+  <doc id=".b1942775" />
+ </query>
+
+ <query text="Biological Sciences">
+  <doc id=".b2676792" />
+  <doc id=".b3360195" />
+ </query>
+
+ <query text="bio one">
+  <doc id=".b2537077" />
+ </query>
+
+ <query text="Book Review Index">
+  <doc id=".b2929678" />
+  <doc id=".b1952065" />
+  <doc id=".b1998364" />
+ </query>
+
+ <query text="Cell">
+  <doc id=".b3243087" />
+  <doc id=".b1586496" />
+ </query>
+
+ <query text="Chronicle of higher education">
+  <doc id=".b3231982" />
+  <doc id=".b1952123" />
+ </query>
+
+ <query text="CQ researcher">
+  <doc id=".b3244026" />
+  <doc id=".b2043691" />
+  <doc id=".b3203460" />
+  <doc id=".b3571266" />
+  <doc id=".b2043127" />
+ </query>
+
+ <query text="Dissertations and theses">
+  <doc id=".b3545879" />
+  <doc id=".b3427550" />
+ </query>
+
+ <query text="ecco">
+  <doc id=".b2719941" />
+ </query>
+
+ <query text="ERIC">
+  <doc id=".b2721574" />
+  <doc id=".b3681365" />
+  <doc id=".b1922580" />
+  <doc id=".b2920658" />
+ </query>
+
+ <query text="Film Indexes">
+  <doc id=".b2726242" />
+  <doc id=".b3253053" />
+  <doc id=".b1976997" />
+ </query>
+
+ <query text="Film Index">
+  <doc id=".b2726242" />
+  <doc id=".b3253053" />
+  <doc id=".b1976997" />
+ </query>
+
+ <query text="Film Literature Index">
+  <doc id=".b3253053" />
+  <doc id=".b1976997" />
+  <doc id=".b2726242" />
+ </query>
+
+ <query text="Handbook of Latin American Studies">
+  <doc id=".b3533758" />
+  <doc id=".b1952996" />
+  <doc id=".b3534610" />
+ </query>
+
+ <query text="hlas">
+  <doc id=".b3533758" />
+  <doc id=".b1952996" />
+  <doc id=".b3534610" />
+  <doc id=".b3392655" />
+ </query>
+
+ <query text="Historical Abstracts">
+  <doc id=".b2449752" />
+  <doc id=".b1584981" />
+  <doc id=".b1559851" />
+  <doc id=".b1559850" />
+ </query>
+
+ <query text="Index Islamicus">
+  <doc id=".b2641714" />
+  <doc id=".b2222901" />
+  <doc id=".b1978885" />
+  <doc id=".b2053341" />
+ </query>
+
+ <query text="International Financial Statistics">
+  <doc id=".b3152036" />
+  <doc id=".b1953010" />
+ </query>
+
+ <query text="imb online">
+  <doc id=".b2578836" />
+  <doc id="" />
+  <doc id="" />
+ </query>
+
+ <query text="JSTOR">
+  <doc id=".b2331683" />
+  <doc id=".b2625734" />
+  <doc id=".b3868089" />
+ </query>
+
+ <query text="lexis">
+  <doc id=".b3617249" />
+  <doc id=".b2379408" />
+ </query>
+
+ <query text="Life">
+  <doc id=".b1585212" />
+  <doc id=".b1582211" />
+  <doc id=".b3540417" />
+  <doc id=".b3536204" />
+  <doc id=".b3525300" />
+ </query>
+
+ <query text="LLBA">
+  <doc id=".b2685041" />
+  <doc id=".b1585187" />
+  <doc id=".b1019941" />
+  <doc id=".b1695610" />
+ </query>
+
+ <query text="Language and language behavior abstracts">
+  <doc id=".b2685041" />
+  <doc id=".b1585187" />
+  <doc id=".b1019941" />
+  <doc id=".b1695610" />
+ </query>
+
+ <query text="MLA">
+  <doc id=".b3572628" />
+  <doc id=".b3401218" />
+  <doc id=".b2723020" />
+  <doc id=".b3807101" />
+  <doc id=".b3689222" />
+  <doc id=".b3251218" />
+  <doc id=".b2575109" />
+ </query>
+
+ <query text="MLA Handbook">
+  <doc id=".b3572628" />
+  <doc id=".b3401218" />
+  <doc id=".b3689222" />
+  <doc id=".b2643567" />
+ </query>
+
+ <query text="Nature">
+  <doc id=".b3228837" />
+  <doc id=".b1580406" />
+ </query>
+
+ <query text="Naxos">
+  <doc id=".b2692787" />
+  <doc id=".b3543879" />
+  <doc id=".b2734637" />
+  <doc id=".b2060912" />
+ </query>
+
+ <query text="Naxos music library">
+  <doc id=".b2692787" />
+  <doc id=".b2734637" />
+ </query>
+
+ <query text="new york times">
+  <doc id=".b3246792" />
+  <doc id=".b1582271" />
+  <doc id=".b1585360" />
+  <doc id=".b1677074" />
+  <doc id=".b3230708" />
+  <doc id=".b1585361" />
+  <doc id=".b3619773" />
+ </query>
+
+ <query text="ncco">
+  <doc id=".b3801718" />
+  <doc id=".b2440904" />
+ </query>
+
+ <query text="Oxford Art">
+  <doc id=".b2417823" />
+  <doc id=".b3229230" />
+  <doc id=".b2168523" />
+  <doc id=".b3523518" />
+ </query>
+
+ <query text="Oxford Art Online">
+  <doc id=".b2417823" />
+  <doc id=".b3229230" />
+  <doc id=".b3523518" />
+ </query>
+
+ <query text="Oxford English Dictionary">
+  <doc id=".b2487748" />
+  <doc id=".b1873484" />
+  <doc id=".b2171154" />
+  <doc id=".b2616030" />
+  <doc id=".b2183156" />
+  <doc id=".b2647593" />
+ </query>
+
+ <query text="oed">
+  <doc id=".b2487748" />
+  <doc id=".b1873484" />
+  <doc id=".b2171154" />
+  <doc id=".b2616030" />
+  <doc id=".b2183156" />
+ </query>
+
+ <query text="Oxford Companion to Music">
+  <doc id=".b3331019" />
+  <doc id=".b2587621" />
+  <doc id=".b3855489" />
+  <doc id=".b1008430" />
+  <doc id=".b1872286" />
+ </query>
+
+ <query text="Oxford Dictionary of Music">
+  <doc id=".b3340544" />
+  <doc id=".b3331019" />
+  <doc id=".b3867034" />
+  <doc id=".b3197938" />
+  <doc id=".b3523483" />
+  <doc id=".b2926297" />
+ </query>
+
+ <query text="Oxford Music">
+  <doc id=".b3331019" />
+  <doc id=".b3340544" />
+  <doc id=".b3867034" />
+  <doc id=".b2587621" />
+ </query>
+
+ <query text="PAIS">
+  <doc id=".b2382779" />
+  <doc id=".b1871160" />
+  <doc id=".b3296190" />
+  <doc id=".b3300183" />
+ </query>
+
+ <query text="Periodicals Index">
+  <doc id=".b2412769" />
+  <doc id=".b1975300" />
+  <doc id=".b1948340" />
+  <doc id=".b1941468" />
+ </query>
+
+ <query text="Persee">
+  <doc id=".b2890030" />
+  <doc id=".b3372272" />
+  <doc id=".b3320644" />
+  <doc id=".b2605600" />
+ </query>
+
+ <query text="RILM Abstracts">
+  <doc id=".b3200822" />
+  <doc id=".b1953977" />
+ </query>
+
+ <query text="RILM Abstracts of Music Literature">
+  <doc id=".b3200822" />
+  <doc id=".b1953977" />
+ </query>
+
+ <query text="Science">
+  <doc id=".b3811286" />
+  <doc id=".b1952430" />
+  <doc id=".b3655538" />
+  <doc id=".b2363750" />
+  <doc id=".b1318970" />
+ </query>
+
+ <query text="Social Work Abstracts">
+  <doc id=".b3582318" />
+  <doc id=".b1669881" />
+  <doc id=".b2382741" />
+ </query>
+
+ <query text="Sociological Abstracts">
+  <doc id=".b2676804" />
+  <doc id=".b1581590" />
+ </query>
+
+ <query text="Economist">
+  <doc id=".b3227392" />
+  <doc id=".b1950497" />
+ </query>
+
+ <query text="Nation">
+  <doc id=".b3231230" />
+  <doc id=".b1582182" />
+  <doc id=".b1066527" />
+  <doc id=".b1883636" />
+  <doc id=".b1066235" />
+  <doc id=".b1709679" />
+ </query>
+
+ <query text="Times">
+  <doc id=".b3233338" />
+  <doc id=".b1733456" />
+  <doc id=".b3544492" />
+  <doc id=".b1164442" />
+  <doc id=".b1771922" />
+ </query>
+
+ <query text="Time">
+  <doc id=".b3752366" />
+  <doc id=".b1953138" />
+ </query>
+
+ <query text="Time Magazine">
+  <doc id=".b3752366" />
+  <doc id=".b1953138" />
+ </query>
+
+ <query text="TLG">
+  <doc id=".b2602241" />
+ </query>
+
+ <query text="Thesaurus Linguae Graecae">
+  <doc id=".b2602241" />
+  <doc id=".b1999729" />
+  <doc id=".b1030738" />
+ </query>
+
+ <query text="TLS">
+  <doc id=".b3247481" />
+  <doc id=".b1694504" />
+  <doc id=".b3786068" />
+  <doc id=".b3801442" />
+  <doc id=".b1585728" />
+  <doc id=".b1633816" />
+ </query>
+
+ <query text="Times Literary Supplement">
+  <doc id=".b3247481" />
+  <doc id=".b1694504" />
+  <doc id=".b3786068" />
+  <doc id=".b3801442" />
+  <doc id=".b1585728" />
+  <doc id=".b1633816" />
+  <doc id=".b2572705" />
+ </query>
+
+ <query text="tocs in">
+  <doc id=".b2556703" />
+ </query>
+
+ <query text="tocs-in">
+  <doc id=".b2556703" />
+ </query>
+
+ <query text="Triptych">
+  <doc id=".b2643129" />
+ </query>
+
+ <query text="Variations">
+  <doc id=".b3343233" />
+  <doc id=".b3802738" />
+ </query>
+
+ <query text="Web of Knowledge">
+  <doc id=".b2664502" />
+  <doc id=".b2444398" />
+ </query>
+
+ <query text="Web of Science">
+  <doc id=".b2444398" />
+  <doc id=".b2664502" />
+ </query>
+
+ <query text="Women's Studies International">
+  <doc id=".b2649854" />
+  <doc id=".b1680971" />
+  <doc id=".b3809391" />
+  <doc id=".b3245486" />
+  <doc id=".b1711401" />
+  <doc id=".b3253050" />
+  <doc id=".b2050285" />
+ </query>
+
+ <query text="World Development Indicators">
+  <doc id=".b3808198" />
+  <doc id=".b1647255" />
+  <doc id=".b2369578" />
+  <doc id=".b3796992" />
+  <doc id=".b3630966" />
+ </query>
+
+ <query text="WorldCat">
+  <doc id=".b2365368" />
+  <doc id=".b2929553" />
+  <doc id=".b3427550" />
+ </query>
+
+</elevate>

@@ -1,0 +1,36 @@
+<?
+  // Set up page title:
+  $this->headTitle($this->translate('Login'));
+
+  // Set up breadcrumbs:
+  $this->layout()->breadcrumbs = '<li><a href="' . $this->url('myresearch-home') . '">' . $this->transEsc('Your Account') . '</a> <span class="divider">&gt;</span></li>'
+    . '<li class="active">' . $this->transEsc('Login') . '</li>';
+
+  // Convenience variables:
+  $account = $this->auth()->getManager();
+  $hideLogin = !(is_object($account) && $account->loginEnabled());
+  $offlineMode = $this->ils()->getOfflineMode();
+?>
+
+<? if ($offlineMode == "ils-offline"): ?>
+  <div class="alert alert-warning">
+    <h2><?=$this->transEsc('ils_offline_title')?></h2>
+    <p><strong><?=$this->transEsc('ils_offline_status')?></strong></p>
+    <p><?=$this->transEsc('ils_offline_login_message')?></p>
+    <? $supportEmail = $this->escapeHtmlAttr($this->systemEmail()); ?>
+    <p><a href="mailto:<?=$supportEmail?>"><?=$supportEmail?></a></p>
+  </div>
+<? endif; ?>
+
+<p class="lead lightbox-header"><?=$this->transEsc('Login')?></p>
+<?=$this->flashmessages()?>
+
+<? if ($hideLogin): ?>
+  <div class="alert alert-error"><?=$this->transEsc('login_disabled')?></div>
+<? else: ?>
+  <? // trico edit 2014.05.08 ah - adding our help text ?>
+  <div class="clearfix">
+    <?=$this->auth()->getLogin()?>
+  </div>
+  <div class="login-help"><hr /><p class="login-help"><img src="<?=$this->imageLink('help.png')?>" id="login-help-image" />First time logging in? Need help? Here's <a href="http://trilibpages.blogs.brynmawr.edu/access-your-tripod-account-with-your-campus-email-and-password/" target="_blank">how it works</a>.</p></div>
+<? endif; ?>

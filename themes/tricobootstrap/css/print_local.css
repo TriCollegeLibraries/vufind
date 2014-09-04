@@ -1,0 +1,6 @@
+b.rtop, .header, .searchbox, .breadcrumbs, .pagination, .toolbar, #tabnav, .sidegroup, .searchtools, .footer, b.rbottom {display:none;}
+.main {border-top:0px; }
+.resulthead label, .resulthead select {display:none;}
+h3 {margin-bottom:0px; margin-top:0px;}
+.citation h4 {display:none;}
+*{background-color: inherit;}

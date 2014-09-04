@@ -1,0 +1,28 @@
+<? if($this->searchClassId != 'Primo'): ?>
+<h4><?=$this->transEsc('Similar Items')?></h4>
+<? $similarRecords = $this->related->getResults(); ?>
+<? if (!empty($similarRecords)): ?>
+  <ul class="nav nav-list related">
+    <? foreach ($similarRecords as $data): ?>
+      <li>
+        <? $formats = $data->getFormats(); if (count($formats) > 0): ?>
+          <span class="<?=preg_replace('/[^a-z0-9]/', '', strtolower($formats[0]))?>"></span><? endif; ?><a href="<?=$this->recordLink()->getUrl($data)?>"><?=$this->escapeHtml($data->getTitle())?><?=$data->getTitleSection() ? '. ' . $this->escapeHtml($data->getTitleSection()) : '' ?></a>
+            <? $author = $data->getPrimaryAuthor(); if (!empty($author)): ?>
+              <br/><?=$this->transEsc('by')?>: <?=$this->escapeHtml($author);?>
+            <? endif; ?>
+            <? $pubDates = $data->getPublicationDates(); if (!empty($pubDates)): ?>
+              <br/>
+              <? // If in DigArch tab the label should read Creation Date ?>
+              <? if ($this->searchClassId == 'DigitalArchives'): ?>
+                <?=$this->transEsc('Creation Date') ?>: <?=$this->escapeHtml($pubDates[0])?>
+              <? else: ?>
+                <?=$this->transEsc('Published')?>: (<?=$this->escapeHtml($pubDates[0])?>)
+              <? endif; ?>
+            <? endif; ?>
+      </li>
+    <? endforeach; ?>
+  </ul>
+<? else: ?>
+  <p><?=$this->transEsc('Cannot find similar records')?></p>
+<? endif; ?>
+<? endif; ?>

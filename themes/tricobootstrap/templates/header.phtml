@@ -1,0 +1,219 @@
+<? $account = $this->auth()->getManager(); ?>
+<h1 id="logo" class="pull-left"><a href="<?=$this->url('combined-home')?>"><img src="<?=$this->imageLink('logo.jpg')?>" alt="tripod" /></a></h1>
+<? if (!isset($this->layout()->renderingError)): ?>
+  <div id="login" class="text-right">
+    <div class="control-group">
+    <? if ($this->feedback()->tabEnabled()): ?>
+      <a href="#contact_form" role="button" data-toggle="modal" class="btn btn-primary btn-mini">
+        <i class="icon-envelope-alt"></i> <?=$this->transEsc("Feedback")?>
+      </a>
+      <span class="muted">&nbsp;/&nbsp;</span>
+    <? endif; ?>
+    <? $cart = $this->cart(); if ($cart->isActive()): ?>
+      <span id="cartSummary">
+        <i class="icon-suitcase"></i> <a id="cartItems" class="modal-link" title="<?=$this->transEsc('View Book Bag')?>" href="<?=$this->url('cart-home')?>"><strong><?=count($cart->getItems())?></strong> <?=$this->transEsc('items')?><?=$cart->isFull() ? ' (' .  $this->transEsc('bookbag_full') . ')' : ''?></a>
+        <span class="muted">&nbsp;/&nbsp;</span>
+      </span>
+    <? endif; ?>
+    <? if (is_object($account) && $account->loginEnabled()): // hide login/logout if unavailable ?>
+      <span class="logoutOptions<? if(!$account->isLoggedIn()): ?> hide<? endif ?>">
+        <i class="icon-home"></i> <a href="<?=$this->url('myresearch-home', array(), array('query' => array('redirect' => 0)))?>" class="modal-link" title="<?=$this->transEsc("Your Account")?>"><?=$this->transEsc("Your Account")?></a>
+        <span class="divider">&nbsp;/&nbsp;</span>
+        <i class="icon-signout"></i><a href="<?=$this->url('myresearch-logout')?>" class="modal-link" id="logout" title="<?=$this->transEsc("Log Out")?>"><?=$this->transEsc("Log Out")?></a>
+      </span>
+      <span id="loginOptions"<? if($account->isLoggedIn()): ?> class="hide"<? endif ?>>
+        <i class="icon-signin"></i> 
+        <? if ($account->getSessionInitiator($this->serverUrl($this->url('myresearch-userlogin')))): ?>
+          <a href="<?=$this->url('myresearch-userlogin')?>"><?=$this->transEsc("Institutional Login")?></a>
+        <? else: ?>
+          <a href="<?=$this->url('myresearch-userlogin')?>" class="modal-link" title="<?=$this->transEsc("Login")?>"><?=$this->transEsc("Login")?></a>
+        <? endif; ?>
+      </span>
+    <? endif; ?>
+    </div>
+    <? if (isset($this->layout()->themeOptions) && count($this->layout()->themeOptions) > 1): ?>
+    <form class="form-horizontal" method="post" name="themeForm" action="" id="themeForm">
+      <div class="control-group">
+        <label class="control-label" for="themeForm_ui"><?=$this->transEsc("Theme")?>:</label>
+        <div class="controls">
+          <select onChange="document.themeForm.submit()" id="themeForm_ui" name="ui">
+          <? foreach ($this->layout()->themeOptions as $current): ?>
+            <option value="<?=$this->escapeHtmlAttr($current['name'])?>"<?=$current['selected'] ? ' selected="selected"' : ''?>><?=$this->transEsc($current['desc'])?></option>
+          <? endforeach; ?>
+          </select>
+          <noscript><input type="submit" value="<?=$this->transEsc("Set")?>" /></noscript>
+        </div>
+      </div>
+    </form>
+    <? endif; ?>
+    <? if ($this->feedback()->tabEnabled()): ?>
+      <?=$this->render('feedback/form.phtml'); ?>
+    <? endif; ?>
+    <? if (isset($this->layout()->allLangs) && count($this->layout()->allLangs) > 1): ?>
+    <form class="form-horizontal" method="post" name="langForm" action="" id="langForm">
+      <label class="control-label" for="langForm_mylang"><?=$this->transEsc("Language")?>:</label>
+      <div class="controls">
+        <select onChange="document.langForm.submit()" id="langForm_mylang" name="mylang" class="jumpMenu">
+        <? foreach ($this->layout()->allLangs as $langCode => $langName): ?>
+          <option value="<?=$langCode?>"<?=$this->layout()->userLang == $langCode ? ' selected="selected"' : ''?>><?=$this->displayLanguageOption($langName)?></option>
+        <? endforeach; ?>
+        </select>
+        <noscript><input type="submit" class="btn" value="<?=$this->transEsc("Set")?>" /></noscript>
+      </div>
+    </form>
+    <? endif; ?>
+  </div>
+<? endif; ?>
+<!-- secondary navigation HTML content -->
+<nav id="horizontal_navigation">
+  <ul id="main-nav" class="pull-right">
+    <li class="main-nav-item main-nav-guides">
+      <a class="main-nav-tab firstTab" href="http://libguides.brynmawr.edu/" tabindex="12" target="_blank">Research Guides</a>
+    </li>
+
+    <li class="main-nav-item main-nav-collections">
+      <div tabindex="13" class="main-nav-tab">Other Collections</div>
+      <div class="main-nav-dd">
+        <div class="main-nav-speccoll"></div>
+        <div class="main-nav-dd-column" id="speccoll">
+          <ul>
+            <li>
+              <a tabindex="14" href="http://trilibpages.blogs.brynmawr.edu/special-collections/" target="_blank">Special Collections Libraries</a>
+            </li>
+            <li>
+              <a tabindex="15" href="http://triceratops.brynmawr.edu/dspace/" target="_blank">Triceratops (Institutional Repositories)</a>
+            </li>
+            <li>
+              <a tabindex="16" href="http://triptych.brynmawr.edu/" target="_blank">Triptych (Images & Manuscripts)</a>
+            </li>
+            <li>
+              <a tabindex="17" href="http://triarte.brynmawr.edu/" target="_blank">Triarte (Art & Artifacts)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <!--close col1 position = 17-->
+    </li>
+
+    <li class="main-nav-item main-nav-borrowing">
+      <div tabindex="18" class="main-nav-tab">Borrowing Beyond Tri-Co</div>
+      <div class="main-nav-dd">
+        <div class="main-nav-borrow"></div>
+        <div class="main-nav-dd-column" id="borrow">
+          <ul>
+            <li>
+              <h3><a tabindex="19" href="http://trilibpages.blogs.brynmawr.edu/ezborrow/" target="_blank">E-ZBORROW</a></h3>
+              <p>(2-5 days) Directly request books from regional academic libraries<br />&nbsp;</p>
+            </li>
+            <li>
+              <h3><a tabindex="20" href="http://tripodclassic.brynmawr.edu/illb/" target="_blank">INTERLIBRARY LOAN</a></h3><p>(2-14 days) Request books (and more) not available in Tripod or EZBorrow<br />&nbsp;</p>
+            </li>
+            <li>
+              <h3><a tabindex="21" href="http://tripodclassic.brynmawr.edu/illj/" target="_blank">ARTICLE REQUESTS</a></h3>
+              <p>(1-10 days) Request journal articles not available in Tripod<br />&nbsp;</p>
+              <p class="moreinfo">For more information: <a tabindex="22" href="http://www.brynmawr.edu/library/CirculationAccessPolicies.html#ill" target="_blank">Bryn Mawr</a> | <a tabindex="23" href="http://library.haverford.edu/services/#borrowing-beyond-trico" target="_blank">Haverford</a> | <a tabindex="24" href="http://www.swarthmore.edu/x5029.xml" target="_blank">Swarthmore</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="main-nav-item main-nav-offcampus">
+      <div tabindex="25" class="main-nav-tab">Off Campus Access</div>
+      <div class="main-nav-dd">
+        <div class="main-nav-offcomp"></div>
+        <div class="main-nav-dd-column" id="offcomp">
+          <ul>
+            <li>
+              <a tabindex="26" href="https://proxy.brynmawr.edu/login?url=https://tripod.brynmawr.edu" target="_blank">Bryn Mawr</a>
+            </li>
+            <li>
+              <a tabindex="27" href="https://ezproxy.haverford.edu/login?url=https://tripod.brynmawr.edu" target="_blank">Haverford</a>
+            </li>
+            <li>
+              <a tabindex="28" href="https://proxy.swarthmore.edu/login?url=https://tripod.brynmawr.edu" target="_blank">Swarthmore</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="main-nav-item main-nav-services">
+      <div tabindex="29" class="main-nav-tab lastTab"><span class="bhs">B H S</span> Libraries</div>
+      <div class="main-nav-dd" id="servs_container">
+        <div class="main-nav-servs"></div>
+        <div class="main-nav-dd-column main-nav-col1" id="servs" style="-moz-border-top-right-radius: 0; border-top-right-radius: 0;-moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; ">
+          <ul>
+            <li>
+              <h3><a tabindex="30" href="http://www.brynmawr.edu/library/index.html" target="_blank">BRYN MAWR</a></h3>
+            </li>
+            <li>
+              <a tabindex="31" href="http://www.brynmawr.edu/library/index.html" target="_blank">Library Home</a>
+            </li>
+            <li>
+              <a tabindex="32" href="http://moodle.brynmawr.edu/" target="_blank">Moodle</a>
+            </li>
+            <li>
+              <a tabindex="33" href="http://tripodclassic.brynmawr.edu/search/r" target="_blank">Reserves</a>
+            </li>
+            <li>
+              <a tabindex="34" href="http://www.brynmawr.edu/library/elecref.html" target="_blank">Ask A Librarian</a>
+            </li>
+            <li>
+              <a tabindex="35" href="http://www.brynmawr.edu/is/hours.html" target="_blank">Library Hours</a>
+            </li>
+          </ul>
+        </div>
+        <!--close col1 position = 17-->
+
+        <div class="main-nav-dd-column main-nav-col2" id="servs" style="padding:1.6em; -moz-border-radius: 0; border-radius: 0;">
+          <ul>
+            <li>
+              <h3><a tabindex="36" href="http://www.haverford.edu/library/" target="_blank">HAVERFORD</a></h3>
+            </li>
+            <li>
+              <a tabindex="37" href="http://www.haverford.edu/library/" target="_blank">Library Home</a>
+            </li>
+            <li>
+              <a tabindex="38" href="http://moodle.haverford.edu/" target="_blank">Moodle</a>
+            </li>
+            <li>
+              <a tabindex="39" href="http://tripodclassic.brynmawr.edu/search/r" target="_blank">Reserves</a>
+            </li>
+            <li>
+              <a tabindex="40" href="http://www.haverford.edu/library/ask_a_librarian.php" target="_blank">Ask A Librarian</a>
+            </li>
+            <li>
+              <a tabindex="41" href="http://www.haverford.edu/library/hours.php" target="_blank">Library Hours</a>
+            </li>
+          </ul>
+        </div>
+        <!--close col2 position = 34-->
+
+        <div class="main-nav-dd-column main-nav-col3"  id="servs" style="-moz-border-top-left-radius: 0; border-top-left-radius: 0;-moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0;">
+          <ul>
+            <li>
+              <h3><a tabindex="42" href="http://www.swarthmore.edu/library.xml" target="_blank">SWARTHMORE</a></h3>
+            </li>
+            <li>
+              <a tabindex="43" href="http://www.swarthmore.edu/library.xml" target="_blank">Library Home</a>
+            </li>
+            <li>
+              <a tabindex="44" href="http://moodle.swarthmore.edu/" target="_blank">Moodle</a>
+            </li>
+            <li>
+              <a tabindex="45" href="http://tripodclassic.brynmawr.edu/search/r" target="_blank">Reserves</a>
+            </li>
+            <li>
+              <a tabindex="46" href="http://www.swarthmore.edu/askalibrarian.xml" target="_blank">Ask A Librarian</a>
+            </li>
+            <li>
+              <a tabindex="47" href="http://www.swarthmore.edu/libraryhours.xml" target="_blank">Library Hours</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+<!-- Secondary navigation tabs end -->

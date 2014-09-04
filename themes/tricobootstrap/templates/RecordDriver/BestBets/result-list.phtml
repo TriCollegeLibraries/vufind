@@ -1,0 +1,53 @@
+  <? $summTitle = $this->driver->getTitle(); ?>
+  <?  $description = $this->driver->getBestBetsDescription(); ?>
+  <div class="listentry span11 clearfix">
+  <? // cover image ?>
+  <div class="span2 leftAlt thumb">
+      <? if ($summThumb = $this->record($this->driver)->getThumbnail()): ?>
+        <img src="<?=$this->escapeHtml($summThumb)?>" alt="<?=$this->transEsc('Cover Image')?>"/>
+      <? else: ?>
+        <img src="<?=$this->url('cover-unavailable')?>" alt="<?=$this->transEsc('No Cover Image')?>"/>
+      <? endif; ?>
+  </div>
+  <div class="span7 middleAlt">
+    <? if ($this->driver->getUniqueId() == 'libhours'): ?>
+      <div class="resultItemLine1">
+        <span class="title"><? echo $this->escapeHtml($this->truncate($summTitle, 180)); ?></span>
+      </div>
+      <div>
+        <? $splitDesc = split(";", $description); ?>
+        <? $splitUrls = split(";", $this->driver->getUrl()); ?>
+        
+       <? foreach ($splitDesc as $key => $desc): ?>
+         <a href="<?=$splitUrls[$key] ?>" target="_blank"><?=$this->transEsc($desc)?></a>
+         <? if($desc != end($splitDesc)): ?>
+           <?=$this->transEsc(' | ')?>
+         <? endif; ?>
+      <? endforeach; ?>
+      </div>
+    <? else: ?>
+      <div class="resultItemLine1">
+        <? if ($this->driver->getBibID() != 'none'): ?>
+          <a href="<?=$this->recordLink()->getUrl($this->driver->getBibID())?>" class="title">
+        <? else: ?>
+          <a href="<?=$this->driver->getUrl()?>" target="_blank" class="title">
+        <? endif; ?>
+        <?
+          if (!empty($summTitle)) {
+            echo $this->escapeHtml($this->truncate($summTitle, 180));
+          } else {
+            echo $this->transEsc('Title not available');
+          }
+        ?>
+        </a>
+      </div>
+      <div>
+        <?
+          if(!empty($description)){
+            echo $this->transEsc($description);
+          }
+        ?>
+      </div>
+    <? endif; ?>
+  </div>
+  </div>

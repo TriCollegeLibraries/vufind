@@ -1,0 +1,23 @@
+<?
+    $url = $this->driver->getUniqueId();
+?>
+<div class="listentry span11 clearfix">
+  <? // cover image ?>
+  <div class="span2 leftAlt thumb">
+      <? if ($summThumb = $this->record($this->driver)->getThumbnail()): ?>
+        <img src="<?=$this->escapeHtml($summThumb)?>" alt="<?=$this->transEsc('Cover Image')?>"/>
+      <? else: ?>
+        <img src="<?=$this->url('cover-unavailable')?>" alt="<?=$this->transEsc('No Cover Image')?>"/>
+      <? endif; ?>
+  </div>
+  <div class="resultItemLine1">
+    <a href="<?=$this->escapeHtmlAttr($url)?>" class="title"><?
+      $summTitle = $this->driver->getTitle();
+      if (!empty($summTitle)) {
+          echo $this->escapeHtml($this->truncate($summTitle, 180));
+      } else {
+          echo $this->transEsc('Title not available');
+      }
+    ?></a>
+  </div>
+</div>

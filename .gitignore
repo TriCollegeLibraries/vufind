@@ -1,0 +1,27 @@
+# GNU Emacs temporary files
+*~
+\#*
+.\#*
+# vim swap files
+*.swp
+# compiled python
+*.pyc
+
+ChangeLog
+TAGS
+vendor/.git
+logs/*
+import/*.log
+import/*.log.*
+nohup.out
+solr/authority/index/*
+solr/biblio/index/*
+solr/biblio/replication.properties
+solr/biblio/spellShingle/*
+solr/biblio/spellchecker/*
+solr/bestbets/index/*
+solr/bestbets/tlog/*
+solr/bestbets/replication.properties
+local/harvest/CDM/*
+solr/biblio/tlog
+solr/alphabetical_browse/*

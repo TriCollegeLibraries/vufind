@@ -1,0 +1,147 @@
+<?
+    // Set up convenience variables:
+    $account = $this->auth()->getManager();
+    $user = $account->isLoggedIn();
+    $holdings = $this->driver->getRealTimeHoldings();
+    $openUrl = $this->driver->openURLActive('holdings') ? $this->driver->getOpenURL() : false;
+    $offlineMode = $this->ils()->getOfflineMode();
+    // Account for replace_other_urls setting
+    $urls = ($openUrl && $this->driver->replaceURLsWithOpenURL()) ? array() : $this->record($this->driver)->getLinkDetails();
+
+    // Set page title.
+    $this->headTitle($this->translate('Holdings') . ': ' . $this->driver->getBreadcrumb());
+?>
+<? // set to offline mode by using NoILS driver; see config.ini ?>
+<? if ($offlineMode == "ils-offline"): ?>
+  <div class="alert alert-warning">
+    <h2><?=$this->transEsc('ils_offline_title')?></h2>
+    <p><strong><?=$this->transEsc('ils_offline_status')?></strong></p>
+    <p><?=$this->transEsc('ils_offline_holdings_message')?></p>
+    <? $supportEmail = $this->escapeHtmlAttr($this->systemEmail()); ?>
+    <p><a href="mailto:<?=$supportEmail?>"><?=$supportEmail?></a></p>
+  </div>
+<? endif; ?>
+<? /* trico edit 2014.06.14 ah - this puts unnecessary 'info alert' boxes
+<? if (($this->ils()->getHoldsMode() == 'driver' && !empty($holdings)) || $this->ils()->getTitleHoldsMode() == 'driver'): ?>
+  <? if ($account->loginEnabled() && $offlineMode != 'ils-offline'): ?>
+    <? if (!$user): ?>
+      <div class="alert alert-info">
+        <a href="<?=$this->currentPath()?>?login=true&amp;catalogLogin=true"><?=$this->transEsc("Login")?></a> <?=$this->transEsc("hold_login")?>
+      </div>
+    <? elseif (!$user->cat_username): ?>
+      <div class="alert alert-info">
+        <?=$this->translate("hold_profile_html", array('%%url%%' => $this->currentPath() . '?catalogLogin=true'))?>
+      </div>
+    <? endif; ?>
+  <? endif; ?>
+<? endif; ?>
+*/ ?>
+
+<? $holdingTitleHold = $this->driver->tryMethod('getRealTimeTitleHold'); if (!empty($holdingTitleHold)): ?>
+  <a class="placehold modal-link" title="<?=$this->transEsc('request_place_text')?>" href="<?=$this->recordLink()->getRequestUrl($holdingTitleHold)?>"><i class="icon-flag"></i>&nbsp;<?=$this->transEsc('title_hold_place')?></a>
+<? endif; ?>
+<? if (!empty($urls) || $openUrl): ?>
+    <? //<h3><?=$this->transEsc("Internet")?><? //</h3> ?>
+  <? // online holdings ?>
+  <? if (!empty($urls)): ?>
+  <!--[if IE]><span style="white-space:nowrap;"><![endif]-->
+    <h3><?=$this->transEsc("Online Access")?></h3>
+    <? foreach ($urls as $current): ?>
+      <? $linkText = strstr($this->driver->getUniqueId(),"cdm-") ? 'Click here to view this item in Triptych' : $current['desc']; ?>
+      <a target="_blank" href="<?=$this->escapeHtml($this->proxyUrl($current['url']))?>"><i class="icon-external-link"></i> <?=$this->escapeHtml($linkText)?></a><br/>
+    <? endforeach; ?>
+    <? if (strstr($this->driver->getUniqueId(),"cdm-")): ?>
+      <span class="available">Online</span>
+    <? endif; ?>
+  <!--[if IE]></span><![endif]-->
+  <? endif; ?>
+  <? if ($openUrl): ?><?=$this->openUrl($openUrl);?><? endif; ?>
+<?endif; ?>
+
+<?=$this->record($this->driver)->getPreviewLink()?>
+
+<? // trico edit 2013.08.02 ah - print holdings statement ?>
+<? if (!empty($holdings['bibHoldings'][0])): ?>
+  <?=$holdings['bibHoldings'][0] ?>
+<? endif; ?>
+
+<? // list of items, grouped by location ?>
+<? foreach ($holdings['items'] as $location => $holding): ?>
+  <? // TRICO edit 2012-01 sl - moved location heading within the table. Otherwise, it stays above all other content in holdings tab ?>
+  <? if ($location != "Online"): ?>
+    <? if (isset($holding[0]['locUrl']) && $holding[0]['locUrl']): ?>
+      <h3><a target="_blank" href="<? $holding[0]['locUrl'] ?>"><?=$this->transEsc($location)?></a></h3>
+    <? else: ?>
+      <h3><?=$this->transEsc($location)?></h3>
+    <? endif; ?>
+  <? endif; ?>
+  <? // trico TODO (later): we've got our table flipped. if we did header: data in each 
+    // row instead of a header row then data row we would
+    // 1. be more in line with the way master is written
+    // 2. have an easier transition to small screens ?>
+  <? // trico TODO (later): we haven't brought over any of the structured data 
+    // now in vufind. ?>
+  <table class="table" summary="<?=$this->transEsc('Holdings details from')?> <?=$this->transEsc($location)?>">
+    <tr>
+      <th><?=$this->transEsc("Call Number")?></th>
+      <th><?=$this->transEsc("Status")?></th>
+    </tr>
+    <? // trico edit 2014.06.16 ah - removed 'volume holdings' and 'notes' 
+      // we don't use these and the table headers / table cells were all weird ?>
+    <? foreach ($holding as $row): ?>
+      <? $check = (isset($row['check']) && $row['check']); ?>
+      <? $checkStorageRetrievalRequest = (isset($row['checkStorageRetrievalRequest']) && $row['checkStorageRetrievalRequest']); ?>
+      <? $checkILLRequest = (isset($row['checkILLRequest']) && $row['checkILLRequest']); ?>
+      <? if (isset($row['barcode']) && $row['barcode'] != ""): ?>
+        <? /* TRICO edit 2011-2012 ah - whole section has been heavily edited over time
+              - all status display text moved to Innovative.ini
+              - online items don't need reqest link
+              - we don't separate Hold from Request
+              - Bookings have been added in addition to Holds
+         */ ?>
+        <tr>
+          <td><?=$row['callnumber']?></td>
+          <td>
+            <? if ($row['reserve'] == "Y"): ?>
+              <span <? if ($row['availability']): ?>class="available" <? else: ?> class="checkedout" <? endif; ?> >
+                <?=$this->transEsc("On Reserve - ")?>
+              </span>
+            <? endif; ?>
+            <? if ($row['availability']): ?>
+              <span class="available"><?=$this->transEsc($row['status'])?></span> 
+              <? $request_link = isset($row['request_link'])
+                                ? $row['request_link'] : ''; ?>
+              <? if ($request_link != "N"): ?>
+                <? // items that need a request link ?>
+                <? if ($row['status'] != "Online" && $request_link != "B"): ?>
+                  <span class="spacer">|</span><a class="holdPlace" id="holdPlace<?=$this->transEsc($this->driver->getUniqueId())?>" href="<?=$this->recordLink()->getRequestUrl($row['link'])?>" title="Request"><?=$this->transEsc("Request")?></a>
+                <? // items that need a book link ?>
+                <? elseif ($request_link == "B"): ?>
+                  <span class="spacer">|</span><a class="bookingPlace" id="bookingPlace<?=$this->transEsc($this->driver->getUniqueId())?>" href="<?=$this->recordLink()->getRequestUrl($row['bookinglink'])?>" title="Book this item">Book this item</a>
+                <? endif; ?>
+                <? if (isset($row['storageRetrievalRequestLink']) && $row['storageRetrievalRequestLink']): ?>
+                  <span class="spacer">|</span><a class="storageRetrievalRequestPlace<?=$checkStorageRetrievalRequest ? ' checkStorageRetrievalRequest' : ''?>" href="<?=$this->recordLink()->getRequestUrl($row['storageRetrievalRequestLink'])?>"><span><?=$this->transEsc($checkStorageRetrievalRequest ? "storage_retrieval_request_check_text" : "storage_retrieval_request_place_text")?></span></a>
+                <? endif; ?>
+                <? if (isset($row['ILLRequestLink']) && $row['ILLRequestLink']): ?>
+                  <span class="spacer">|</span><a class="ILLRequestPlace<?=$checkILLRequest ? ' checkILLRequest' : ''?>" href="<?=$this->recordLink()->getRequestUrl($row['ILLRequestLink'])?>"><span><?=$this->transEsc($checkILLRequest ? "ill_request_check_text" : "ill_request_place_text")?></span></a>
+                <? endif; ?>
+              <? endif; ?>
+            <? else: ?>
+              <span class="checkedout"><?=$this->transEsc($row['status'])?></span>
+            <? endif; ?>
+          </td>
+        </tr>
+      <? endif; ?>
+    <? endforeach; ?>
+  </table>
+<? endforeach; ?>
+
+<? $history = $this->driver->getRealTimeHistory(); ?>
+<? if (is_array($history) && !empty($history)): ?>
+<h3><?=$this->transEsc("Most Recent Received Issues")?></h3>
+<table class="table">
+  <? foreach ($history as $row): ?>
+    <tr><td><?=$this->escapeHtml($row['issue'])?></td></tr>
+  <? endforeach; ?>
+</table>
+<? endif; ?>

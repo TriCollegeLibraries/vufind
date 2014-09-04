@@ -1,0 +1,105 @@
+<? if (isset($availability)) {
+        $script = 'var availability = ' . $availability . ';';
+        $this->headScript()->appendScript($script);
+   }
+?>
+<? /* sometimes we need to know whether we're on page1 or page2 of the form. */ ?>
+<? if (isset($items)): ?>
+    <? $page = 2; ?>
+    <? else: ?>
+    <? $page = 1; ?>
+<? endif; ?>
+
+<?
+    // Set page title.
+    $this->headTitle($this->translate('request_place_text') . ': ' . $this->driver->getBreadcrumb());
+
+    // Set up breadcrumbs:
+    $this->layout()->breadcrumbs = '<li>' . $this->getLastSearchLink($this->transEsc('Search Result'), '', '<span class="divider">&gt;</span> </li>')
+        . '<li>' . $this->recordLink()->getBreadcrumb($this->driver) . '<span class="divider">&gt;</span> </li>'
+        . '<li class="active">' . $this->transEsc('Book an Item') . '</li>';
+
+    // Load Javascript dependencies into header:
+    $this->headScript()->appendFile("anytime.js");
+    $this->headScript()->appendFile("datepicker.js");
+    $this->headLink()->appendStylesheet("anytime.css");
+?>
+
+<h2>Book Item</h2>
+<?=$this->flashmessages()?>
+
+<div class="booking-form">
+  <form action="" method="post" name="placeBooking">
+
+    <? if (in_array("itemRequested", $extraBookingFields)): ?>
+      <? if (count($this->items) > 0): ?>
+        <div>
+          <strong>Select an Item:</strong><br/>
+          <select name="gatheredDetails[itemRequested]">
+            <? foreach ($this->items as $item): ?>
+              <option value="<?=$this->escapeHtml($item['itemID'])?>"<?=($selected == $item['itemID']) ? ' selected="selected"' : ''?>>
+                <?=$this->escapeHtml($item['itemDisplay'])?>
+              </option>
+            <? endforeach; ?>
+          </select>
+        </div>
+      <? endif; ?>
+    <? endif; ?>
+
+    <div id="bookinginput">
+      <? if (in_array("startdate", $extraBookingFields)): ?>
+        <div id="bookingdate" class="pull-left">
+          <? /* make sure to repopulate with user choice when we have it */ ?>
+          <? if (isset($gatheredDetails['startdate'])): ?>
+            <? $initial = $gatheredDetails['startdate']; ?>
+          <? else: ?>
+            <? $initial = $firstavailable['date']; ?>
+          <? endif; ?>
+          <? /* if we're on page 2 it's a hidden field */ ?>
+          <? if ($page == 2): ?>
+            <input type="hidden" name="gatheredDetails[startdate]" value="<?=$initial;?>" />
+          <? else: ?>
+            <strong>Start Date: </strong>
+            <input type="text" id="startdate" name="gatheredDetails[startdate]" value="<?=$initial;?>" />
+          <? endif; ?>
+        </div>
+      <? endif; ?>
+
+      <? if (in_array("starttime", $extraBookingFields)): ?>
+        <div id="bookingtime">
+          <? /* make sure to repopulate with user choice when we have it */ ?>
+          <? if (isset($gatheredDetails['starttime'])): ?>
+            <? $initial = $gatheredDetails['starttime']; ?>
+          <? else: ?>
+            <? $initial = $firstavailable['firsttime']; ?>
+          <? endif; ?>
+          <? /* if we're on page 2 it's a hidden field */ ?>
+          <? if ($page == 2): ?>
+            <input type="hidden" name="gatheredDetails[starttime]"
+               value="<?=$initial;?>" />
+          <? else: ?>
+            <strong>Start Time: </strong>
+            <input type="text" id="starttime" name="gatheredDetails[starttime]"
+               value="<?=$initial;?>" />
+          <? endif; ?>
+        </div>
+      <? endif; ?>
+    </div>
+
+    <div id="booking-submit">
+      <input type="submit" name="placeBooking" value="<?=$this->transEsc('request_submit_text') ?>"/>
+    </div>
+
+  </form>
+
+  <div id="notes">
+    <p>Note:</p>
+    <ul>
+      <li>Dates are not selectable when the library is closed or no items are available.</li>
+      <li>Online bookings can only be made for dates in the next 30 days.  If you need to book an item more than 30 days from now, please contact circulation.</li>
+      <li>Items will always be booked for the longest possible period of time.</li>
+      <li>If you need an item longer or have any questions please contact your circulation department.</li>
+    </ul>
+  </div>
+
+</div>

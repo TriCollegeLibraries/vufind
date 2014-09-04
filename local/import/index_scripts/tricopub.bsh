@@ -1,0 +1,77 @@
+/** 
+ * 2013-4-24 
+ * slamm1@swarthmore.edu, clobdel1@swarthmore.edu
+ */
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
+import java.lang.Character;
+import org.marc4j.marc.*;
+import org.solrmarc.tools.Utils;
+import org.solrmarc.index.SolrIndexer;
+
+// NOTE: BeanShell does not support generics
+
+// define base level indexer so that its methods can be called from the script.
+// note: SolrIndexer code sets this value before the script methods are called.
+org.solrmarc.index.SolrIndexer indexer = null;
+
+// For each record return a set of publishers
+public Set getPublishers(Record record) {
+    // Does the record have any 264s? If so, get all of them
+    List list264 = record.getVariableFields("264");
+    if (!list264.isEmpty())
+    {
+        Map indMap = new HashMap();
+
+        for (VariableField vf : list264)
+        {
+            // For each 264 check indicator 1 and indicator 2 for any of
+            // these combinations: 31, 21, blank1.  
+            DataField df = (DataField) vf;
+            char ind1 = df.getIndicator1();
+            char ind2 = df.getIndicator2();
+            String mapKey = null;
+            if ((ind1 == '3') && (ind2 == '1')) {
+                mapKey = "3";
+            }else if ((ind1 == '2') && (ind2 == '1')){
+                mapKey = "2";
+            }else if ((ind1 == ' ') && (ind2 == '1')){
+                mapKey = "blank";
+            }
+
+            // If one of the combinations exists get all the subfield b 
+            // for that 264
+            if(mapKey != null){
+                List allField264b = Utils.getSubfieldStrings(df, 'b');
+                if(allField264b != null || !allField264b.isEmpty()){
+                    indMap.put(mapKey, new HashSet(allField264b));
+                }
+            }
+        }
+
+        // If we have 264b, return publisher 
+        if (!indMap.isEmpty())
+        {
+            Set publisher = null;
+           
+            if (indMap.containsKey("3")){
+                publisher = indMap.get("3");
+            }else if (indMap.containsKey("2")){
+                publisher = indMap.get("2");
+            }else if (indMap.containsKey("blank")){
+                publisher = indMap.get("blank");
+            }
+            if (publisher != null) {
+                return publisher;
+            }
+        }
+        
+    }
+
+    // else default to 260b
+    return indexer.getFieldList(record, "260b");                
+     
+}

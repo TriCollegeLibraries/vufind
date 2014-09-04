@@ -1,0 +1,13 @@
+<? $account = $this->auth()->getManager(); ?>
+<div style="padding:12px 10px 10px 10px;">
+<div class="offcmp">
+    <h2>It appears you are trying to access articles from an off-campus location. Login below through EZProxy to unleash the full power of Tripod.</h2>
+    <br />
+    <a class="brynm_big" <? if($account->isLoggedIn()): ?>target="_blank"<? endif; ?> href="https://proxy.brynmawr.edu/login?url=http://tripod.brynmawr.edu"></a>&nbsp;|&nbsp;<a class="haverf_big" <? if($account->isLoggedIn()): ?>target="_blank"<? endif; ?> href="https://ezproxy.haverford.edu/login?url=http://tripod.brynmawr.edu"></a>&nbsp;|&nbsp;<a class="swarth_big" <? if($account->isLoggedIn()): ?>target="_blank"<? endif; ?> href=" https://proxy.swarthmore.edu/login?url=http://tripod.brynmawr.edu"></a>
+
+<? if($account->isLoggedIn()): ?>
+<br /><br />
+<h2>Note to logged in users: you will be taken to a new window or tab due to incompatibilities between EZProxy and Tripod login systems.  Use the current window to view your account and the new window to search articles.</h2>
+<? endif; ?>
+</div>
+</div>

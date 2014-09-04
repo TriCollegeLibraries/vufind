@@ -1,0 +1,8 @@
+<? if (!isset($this->indexStart)) $this->indexStart = 0; ?>
+<? $i = $this->indexStart; foreach ($this->results->getResults() as $current):
+  $recordNumber = $this->results->getStartRecord()+$i-$this->indexStart; ?>
+  <div id="result" class="row-fluid result clearfix bestbet">
+    <label class="checkbox pull-left"></label>
+    <?=$this->record($current)->getSearchResult('list')?>
+  </div>
+<? endforeach; ?>

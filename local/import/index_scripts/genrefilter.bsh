@@ -1,0 +1,167 @@
+/** 2011-9-15 aheadle1@swarthmore.edu 
+ *  trico 
+*/
+
+import java.util.ArrayList;
+import java.util.Set;
+import org.marc4j.marc.*;
+import org.solrmarc.tools.Utils;
+import org.solrmarc.index.SolrIndexer;
+
+// NOTE: BeanShell does not support generics
+
+// define base level indexer so that its methods can be called from the script.
+// note: SolrIndexer code sets this value before the script methods are called.
+org.solrmarc.index.SolrIndexer indexer = null;
+
+// we don't need regexen because we're just going to match entire full strings
+// NOTE!!!  Anything added to this list should be lowercase and punctuation-free
+private final static String[] UNWANTED_GENRES = new String[] {
+    "archival resource",
+    "archive",
+    "archives",
+    "audio cassettes",
+    "audio tapes",
+    "cdroms",
+    "compact discs",
+    "computer files",
+    "computer network resource",
+    "computer network resources",
+    "computer networked resource",
+    "computer networked resources",
+    "database",
+    "databases",
+    "digital maps",
+    "digital media",
+    "digital prints",
+    "digital video",
+    "directories electronic",
+    "dvd video discs",
+    "dvdroms",
+    "dvdvideo discs",
+    "electronic books",
+    "electronic discussion groups",
+    "electronic encyclopedias",
+    "electronic government publications",
+    "electronic indexes",
+    "electronic information resources",
+    "electronic journal",
+    "electronic journals",
+    "electronic newspapers",
+    "electronic reference sources",
+    "electronic resources",
+    "electronic serials",
+    "electronic texts",
+    "emusic",
+    "feature", // but not feature films
+    "free circulation newspapers",
+    "fulltext",
+    "indian newspapers",
+    "information resources",
+    "interactive multimedia",
+    "internet resource",
+    "internet resources",
+    "journal",
+    "journals",
+    "journaux",
+    "live sound recordings",
+    "manuscripts coptic sahidic",
+    "manuscripts english",
+    "manuscripts english old",
+    "manuscripts german",
+    "manuscripts greek",
+    "manuscripts greek modern",
+    "manuscripts greek new testament",
+    "manuscripts hebrew",
+    "manuscripts latin",
+    "manuscripts latin medieval and modern",
+    "manuscripts syriac",
+    "manuscripts",
+    "maps comparative",
+    "maps manuscript",
+    "maps outline and base",
+    "maps physical",
+    "maps pictorial",
+    "maps pictorial",
+    "maps statistical",
+    "maps topographic",
+    "maps tourist",
+    "maps",
+    "maps and charts",
+    "maps and surveys",
+    "maps for children",
+    "motion pictures",
+    "music",
+    "musical scores",
+    "newspapers periodicals and journalism",
+    "newspapers",
+    "online chat groups",
+    "online databases",
+    "online resource",
+    "online resources",
+    "periodical publications philadelphia",
+    "periodical",
+    "periodicals",
+    "p.riodiques", // was a special char. just match any. 
+    "photographs",
+    "ressource internet descripteur de forme",
+    "scores",
+    "sheet music",
+    "sound recordings",
+    "sound recordings for english speakers",
+    "sound recordings for foreign speakers",
+    "special collections",
+    "streaming video",
+    "text",
+    "text",
+    "text serial",
+    "text serial journal",
+    "textos",
+    "texts",
+    "textsbooks",
+    "vcdvideo discs",
+    "video recordings",
+    "video tapes",
+    "video tapes in education",
+    "video tapes in psychology",
+    "videocassettes",
+    "videodiscs",
+    "videorecordings",
+    "web sites"
+};
+
+// for comparison:
+//   convert to case-insensitive
+//   strip all punctuation (e.g.  "Text. Serial. Journal", "e-book")
+//   match entire string (e.g. "feature" not "feature films")
+public Set getGenres(Record record) {
+    // get the set of fields
+    String genreFields = "600v:610v:611v:630v:648v:650v:651v:655a:655v";
+    Set data = indexer.getFieldList(record, genreFields);
+    // try to match against each unwanted string
+    ArrayList cleanData = new ArrayList();
+    String tmp;
+    boolean index;
+    for (String d : data) {
+        index = true;
+        // strip all punctuation, lowercase it
+        tmp = d.replaceAll("[^\\w ]", "").toLowerCase();
+        for (String unwanted : UNWANTED_GENRES) {
+            if (unwanted.equals(tmp)) {
+                index = false;
+            }
+        }
+        if (index) {
+            // if it didn't match any unwanted genres, add it to return set
+            cleanData.add(Utils.cleanData(d));
+        }
+    }
+    // return a set 
+    data.clear();
+    for (String d : cleanData) {
+        data.add(d);
+    }
+    return data;
+    ArrayList unwanted_genres = new ArrayList();
+
+}

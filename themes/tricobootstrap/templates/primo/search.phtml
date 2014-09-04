@@ -1,0 +1,33 @@
+<?
+    if (!$this->params->isOnCampus()) {
+      // Set up page title:
+      $lookfor = $this->results->getUrlQuery()->isQuerySuppressed() ? '' : $this->params->getDisplayQuery();
+
+      $this->headTitle($this->translate('Articles Off Campus Access')); 
+
+      // Set up search box:
+      $this->layout()->searchbox = $this->context($this)->renderInContext(
+        'search/searchbox.phtml',
+        array(
+          'lookfor' => $lookfor,
+          'searchIndex' => $this->params->getSearchHandler(),
+          'searchType' => $this->params->getSearchType(),
+          'searchId' => $this->results->getSearchId(),
+          'searchClassId' => $this->params->getsearchClassId(),
+          'checkboxFilters' => $this->params->getCheckboxFacets(),
+          'filterList' => $this->params->getFilters(),
+          'hasDefaultsApplied' => $this->params->hasDefaultsApplied(),
+          'selectedShards' => $this->params->getSelectedShards()
+        )
+      );
+
+      echo $this->render('primo/offcampus.phtml');
+    }else{
+      $lookfor = $this->results->getUrlQuery()->isQuerySuppressed() ? '' : $this->params->getDisplayQuery();
+
+      // Load standard settings from the default search results screen:
+      echo $this->render('search/results.phtml');
+      $this->layout()->homeRoute = 'primo-home';
+      $this->headTitle($this->translate('Articles Search Results') . (empty($lookfor) ? '' : " - {$lookfor}"));
+    }
+?>

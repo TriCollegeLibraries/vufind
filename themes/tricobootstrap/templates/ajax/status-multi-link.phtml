@@ -1,0 +1,8 @@
+<?/* TRICO edit 2011-08 ah this is a trico-only file that enables 
+   * desired status display when there are multiple items with multiple
+   * availability statuses */?>
+<span>
+<? // getUrl takes a driver but we don't have one here. so we use the alternate
+    // form which is a source (default vufind) then | delimiter then id. ?>
+<a href="<?=$this->recordLink()->getUrl("|".$this->id)?>">Check Availability</a>
+</span>

@@ -1,0 +1,625 @@
+import java.io.*;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Calendar;
+import java.lang.Character;
+import org.marc4j.marc.*;
+//import org.solrmarc.marc.MarcImporter;
+import org.solrmarc.tools.Utils;
+import org.solrmarc.index.SolrIndexer;
+
+// NOTE: BeanShell does not support generics
+
+// define base level indexer so that its methods can be called from the script.
+// note: SolrIndexer code sets this value before the script methods are called.
+org.solrmarc.index.SolrIndexer indexer = null;
+
+private final static Pattern FOUR_DIGIT_PATTERN = Pattern.compile("^\\d{4,4}");
+private final static Pattern ONLY_FOUR_DIGIT_PATTERN = Pattern.compile("^\\d{4,4}$");
+private final static Pattern FOUR_NINES_PATTERN = Pattern.compile("9{4,4}");
+private final static Pattern FOUR_U_PATTERN = Pattern.compile("[Uu]{4,4}");
+private final static Pattern QUESTION_DATE_PATTERN = Pattern.compile("^\\d{1,3}-+\\?");
+private final static Pattern SHORT_DATE_PATTERN = Pattern.compile("^\\d{1,3}");
+private static Matcher clean;
+private static Matcher matcher_four_digit;
+private static Matcher matcher_four_nines;
+private static Matcher matcher_four_u;
+private static Matcher matcher_question_date;
+private static Matcher matcher_short_date;
+
+public String getSortDate(Record record) {
+    Map map;
+    map = prep008Dates(record);
+    if (map == null) {
+        // mat type j or s -- we don't want any dates
+        return null;
+    }
+    if (map.size() > 2) {
+        // here map will always have two entries: matType, source
+        String result = processSortDate(map);
+        if (result != null) {
+            return result;
+        }
+    }
+    map = prepOtherDates(record);
+    if (map != null) {
+        return processSortDate(map);
+    }
+    else return null;
+}
+
+public String processSortDate(Map map) {
+    if (map.containsKey("single")) {
+        // sort by the single date.  choose mid date for dates with 'u'.
+        String[] datearray = map.get("single");
+        return cleanDate(datearray[0], "mid", false);
+    }
+    else if (map.containsKey("multi")) {
+        // sort by earliest date.  choose mid date for dates with 'u'.
+        datearray = map.get("multi");
+
+        ArrayList intArr = new ArrayList();
+        for (i=0; i<datearray.length; i++) {
+            String d = cleanDate(datearray[i], "mid", false);
+            if (d != null) {
+                Integer dInt = new Integer(d);
+                intArr.add(dInt);
+            }
+        }
+        if (intArr.size() > 0) {
+            Collections.sort(intArr);
+            return intArr.get(0).toString();
+        }
+        else {
+            return null;
+        }
+    }
+    else if (map.containsKey("range")) {
+        // sort by latest date.  choose lower and upper for dates with 'u'.
+        datearray = map.get("range");
+        String d1 = cleanDate(datearray[0], "down", false);
+        String d2 = cleanDate(datearray[1], "up", true);
+        if (d1 == null && d2 == null) {
+            return null;
+        }
+        else if (d2 == null) {
+            return d1;
+        }
+        else if (d1 == null) {
+            return d2;
+        }
+        // we got 2 non-null values
+        Integer date1 = new Integer(d1);
+        Integer date2 = new Integer(d2);
+        if (date2 > date1) return d2;
+        else return d1;
+    }
+    return null;
+}
+
+public Set getFacetDate(Record record) {
+    Map map;
+    map = prep008Dates(record);
+    if (map == null) {
+        // mat type j or s -- we don't want any dates
+        return null;
+    }
+    if (map.size() > 2) {
+        // here map will always have two entries: matType, source
+        Set result = processFacetDate(map);
+        if (result != null) {
+            return result;
+        }
+    }
+    map = prepOtherDates(record);
+    if (map != null) {
+        return processFacetDate(map);
+    }
+    else return null;
+}
+
+public Set processFacetDate(Map map) {
+    if (map.containsKey("single")) {
+        // single date.  insert all where date contains 'u'.
+        datearray = map.get("single");
+        return expandDate(datearray, map.get("source")[0]);
+    }
+    else if (map.containsKey("multi")) {
+        // multiple dates; return all.  expand dates with 'u'.
+        datearray = map.get("multi");
+        return expandDate(datearray, map.get("source")[0]);
+    }
+    else if (map.containsKey("range")) {
+        // get lower and upper for dates with 'u'. expand between (inclusive).
+        datearray = map.get("range");
+        Set retSet = new HashSet();
+        String d1 = cleanDate(datearray[0], "down", false);
+        String d2 = cleanDate(datearray[1], "up", true);
+        if (d1 == null && d2 == null) {
+            return null;
+        }
+        else if (d2 == null) {
+            retSet.add(d1);
+        }
+        else if (d1 == null) {
+            retSet.add(d2);
+        }
+        else {
+            // we got 2 non-null values
+            Integer date1 = new Integer(d1);
+            Integer date2 = new Integer(d2);
+            if (date2 < date1) {
+                // make sure date1 is always earliest
+                Integer d = date1;
+                date1 = date2;
+                date2 = d;
+            }
+            // expand the range
+            for (date1; date1<=date2; date1++) {
+                retSet.add(date1.toString());
+            }
+        }
+        return retSet;
+    }
+    return null;
+}
+
+public String getDisplayDate(Record record) {
+    Map map;
+    
+    map = prep008Dates(record);
+    if (map == null) {
+        // mat type j or s -- we don't want any dates
+        return null;
+    }
+    if (map.size() > 2) {
+        // here map will always have two entries: matType, source
+        String result = processDisplayDate(map);
+        if (result != null) {
+            return result;
+        }
+    }
+    
+    map = prepOtherDates(record);
+    if (map != null) {
+        return processDisplayDate(map);
+    }
+    else return null;
+}
+
+public String processDisplayDate(Map map) {
+    String retStr;
+    String unknown = "unknown";
+    if (map.containsKey("single")) {
+        String[] datearray = map.get("single");
+        retStr = cleanDate(datearray[0], "none", false);
+        if (retStr != null) return retStr;
+    }
+    else if (map.containsKey("multi")) {
+        // return the dates separated by commas.
+        // TODO: make this more informative by looking at mattype?
+        datearray = map.get("multi");
+        ArrayList dates = new ArrayList();
+        for (i=0; i<datearray.length; i++) {
+            String d = cleanDate(datearray[i], "none", false);
+            if (d != null) {
+                dates.add(d);
+            }
+        }
+        if (dates.size() > 0) {
+            retStr = "";
+            for (i=0; i<dates.size(); i++) {
+                if (i > 0) {
+                    retStr += ", ";
+                }
+                retStr += dates.get(i);
+            }
+            return retStr;
+        }
+        return unknown;
+    }
+    else if (map.containsKey("range")) {
+        // return the dates separated by '-'.
+        datearray = map.get("range");
+        String d1 = cleanDate(datearray[0], "none", false);
+        String d2 = cleanDate(datearray[1], "none", true);
+        if (d1 != null && d2 != null) {
+            // we got 2 non-null values
+            return d1 + "-" + d2;
+        }
+        else if (d2 == null) {
+            return d1;
+        }
+        else if (d1 == null) {
+            return d2;
+        }
+    }
+    return unknown;
+}
+
+public Set expandDate(String[] date, String source) {
+    // used by single and multi case facet creation. 
+    // if the date given is uuuu or 9999, we'll toss it.
+    // retSet will hold Strings
+    Set retSet = new HashSet();
+    for (String d : date) {
+        String d1str = cleanDate(d, "down", false);
+        String d2str = cleanDate(d, "up", false);
+        // since date1 and date2 were created from the same date, 
+        // if one is null both will be null.
+        if (d1str != null) {
+            Integer date1 = new Integer(d1str);
+            Integer date2 = new Integer(d2str);
+            for (date1; date1<=date2; date1++) {
+                retSet.add(date1.toString());
+            }
+        }
+    }
+    if (retSet.size() > 0) {
+        return retSet;
+    }
+    else {
+        return null;
+    }
+}
+
+public Map prepOtherDates(Record record) {
+    // once we get here we won't have any matType 'j' or 's' (already tossed)
+    Map retMap = new HashMap();
+
+    //TRICO edit 2013-04 cl, sl
+    // Get the 264a. Depends on the indicators.
+    // ind1 = 3 && ind2 = 1 || ind1 = 2 && ind2 = 1 || ind1 = ' ' && ind2 = 1 
+    // are acceptable indicator combinations, in that order.
+    //Process:
+    //get the 264s
+    //if indicators match set as an entry in hashmap with
+    //the key reflecting the first indicator and the date subfield ('c' or '3') as the value 
+    //if the hashmap has values test keys in order of preference
+
+    List list264 = record.getVariableFields("264");
+    if (!list264.isEmpty())
+    {
+        Map indMap = new HashMap();
+
+        for (VariableField vf : list264)
+        {
+            DataField df = (DataField) vf;
+            char ind1 = df.getIndicator1();
+            char ind2 = df.getIndicator2();
+            String mapKey = null;
+            
+            if ((ind1 == '3') && (ind2 == '1')) {
+                mapKey = "3";
+            }else if ((ind1 == '2') && (ind2 == '1')){
+                mapKey = "2";
+            }else if ((ind1 == ' ') && (ind2 == '1')){
+                mapKey = "blank";
+            }
+           
+            if(mapKey != null){
+                List allField264c = Utils.getSubfieldStrings(df, 'c');
+
+                // if there's nothing in the c subfield check the 3 subfield
+                if(allField264c.isEmpty()){
+                    allField264c = Utils.getSubfieldStrings(df, '3');
+                }
+
+                String field264c = null;
+                if(allField264c.size() == 1){
+                    field264c = allField264c.get(0);
+                }
+                
+                indMap.put(mapKey, field264c);            
+            }
+        }
+        
+        if (!indMap.isEmpty())
+        {
+            String pubdate = null;
+
+            if (indMap.containsKey("3")){  
+                pubdate = indMap.get("3");
+            }else if (indMap.containsKey("2")){ 
+                pubdate = indMap.get("2");
+            }else if (indMap.containsKey("blank")){
+                pubdate = indMap.get("blank");
+            }
+
+            //process value like 260c and return it
+            if (pubdate != null) {
+                String date = Utils.cleanData(pubdate);
+                if (date != null) {
+                    return parse260(date);
+                }
+            }
+        }
+    }
+    // try for the 245f. return it if it works.
+    String field245f = indexer.getFirstFieldVal(record, "245f");
+    if (field245f != null) {
+        // extract the two dates.
+        field245f = Utils.cleanData(field245f);
+        if (field245f.matches("undated")) {
+            retMap.put("unknown", new String[] {"undated"});
+            retMap.put("source", new String[] {"245f"});
+            return retMap;
+        }
+        else {
+            String[] range245f = parse245(field245f); 
+            if (range245f != null) {
+                retMap.put("range", range245f);
+                retMap.put("source", new String[] {"245f"});
+                return retMap;
+            }
+        }
+    }
+    // no 245f. do the 260.
+    String field260c = indexer.getFieldVals(record, "260c", ", ");
+    if (field260c != null || field260c.length() > 0) {
+        String date = Utils.cleanData(field260c);
+        if (date != null) {
+            return parse260(date);
+        }
+    }
+    retMap.put("unknown", new String[] {"unknown"});
+    retMap.put("source", new String[] {"couldn't find a date"});
+    return retMap;
+}
+
+public Map parse260(String date) {
+    // 260 could be single, multi, or range
+    // we need to figure out which it is and separate it into its pieces
+    Map retMap = new HashMap();
+
+    // first get rid of extraneous cruft.
+    // remove everything except digits, '-', and '?'
+    String date = date.replaceAll("[^0-9\\-?]", "");
+
+    // single date will never have more than length 5 (has 5 w/ '?')
+    if (date.length() <= 5) {
+        retMap.put("single", new String[] {date});
+        retMap.put("source", new String[] {"260c"});
+        return retMap;
+    }
+
+
+    // need to distinguish between range and multi.
+    // pull off the first date:
+    //   4 digits
+    //   < 4 digits, up through '?'
+    //   < 4 digits, up to '-' (known pre-1000 date -- unlikely but possible)
+    // then: is next char a '-'?  if yes, we have a range (remember, no spaces)
+    // otherwise we have a multi.  split them off as above.
+    ArrayList retDates = new ArrayList();
+    String category = "";
+    while (date.length() > 0) {
+        matcher_four_digit = FOUR_DIGIT_PATTERN.matcher(date);
+        matcher_question_date = QUESTION_DATE_PATTERN.matcher(date);
+        matcher_short_date = SHORT_DATE_PATTERN.matcher(date);
+
+        if (matcher_four_digit.find()) {
+            retDates.add(matcher_four_digit.group());
+            date = date.substring(matcher_four_digit.end());
+        }
+        else if (matcher_question_date.find()) {
+            retDates.add(matcher_question_date.group());
+            date = date.substring(matcher_question_date.end());
+        }
+        else if (matcher_short_date.find()) {
+            retDates.add(matcher_short_date.group());
+            date = date.substring(matcher_short_date.end());
+        }
+        else { 
+            break; // bad date string; exit loop
+        }
+
+        // after the first time through we can figure what sort of date it is
+        if (retDates.size() == 1) {
+            // now if the first char in date is a '-' it's a range.  
+            if (date.charAt(0) == '-') {
+                category = "range";
+                date = date.substring(1);
+            }
+            else {
+                category = "multi";
+            }
+        }
+    }
+    if (retDates.size() > 0) {
+        // convert arraylist to array (sigh, java)
+        String[] retArray = new String[retDates.size()];
+        retDates.toArray(retArray);
+
+        if (retArray.length == 1) { 
+            // we must've had a bad string; put through as single
+            retMap.put("single", retArray);
+            retMap.put("source", new String[] {"260c"});
+            return retMap;
+        }
+        else if (retArray.length > 1) {
+            retMap.put(category, retArray);
+            retMap.put("source", new String[] {"260c"});
+            return retMap;
+        }
+    }
+    // no luck
+    retMap.put("unknown", new String[] {"unknown"});
+    retMap.put("source", new String[] {"couldn't find a date"});
+    return retMap;
+}
+
+public String[] parse245(String dates) {
+    // this str should be in form 'xxxx-yyyy' or 'xxxx-'
+    if (dates.length() != 5 && dates.length() != 9) return null;
+    String date1, date2;
+    date1 = dates.substring(0, 4);
+    if (dates.length() > 5) {
+        date2 = dates.substring(5);
+    }
+    else {
+        date2 = "uuuu";
+    }
+    if (FOUR_DIGIT_PATTERN.matcher(date1).find() && 
+            (FOUR_DIGIT_PATTERN.matcher(date2).find() || FOUR_U_PATTERN.matcher(date2).find())) {
+        return new String[] {date1, date2};
+    }
+    else return null;
+}
+
+/** return null if we specifically do not want to add anything to date 
+ * index.  return empty map if we were unable to find a date ("unknown" case)
+ */
+public Map prep008Dates(Record record) {
+    // turns out not all records have a mattype.
+    char matType;
+    String matTypeField = indexer.getFirstFieldVal(record, "999e");
+    if (matTypeField != null) {
+        matType = matTypeField.charAt(0);
+    }
+    // journals and serials: do not add a date of any kind.
+    if (matTypeField == null || matType == 'j' || matType == 's') {
+        return null;
+    }
+
+    Map retMap = new HashMap();
+    retMap.put("source", new String[] {"008"});
+    String field008 = indexer.getFirstFieldVal(record, "008");
+
+    // if the 008 doesn't cut it, return empty map
+    if (field008 == null || field008.length() < 16) {
+        return retMap;
+    }
+    // parse the 008 data
+    char dateType = field008.charAt(6);
+    String date1 = field008.substring(7, 11).replaceAll(" ", "");
+    String date2 = field008.substring(11, 15).replaceAll(" ", "");
+    retMap.put("dateType", new String[] {new Character(dateType).toString()});
+
+    // ENSURE ALPHABETICAL ORDER!!! to enable binary search
+    char[] singleValues = {'c', 'd', 'e', 'm', 'q', 's', 'u'};
+    char[] multiValues = {'p', 'r', 't'};
+    char[] rangeValues = {'i', 'k'};
+
+    if (Arrays.binarySearch(singleValues, dateType) >= 0) {
+        retMap.put("single", new String[] {date1});
+    }
+    else if (Arrays.binarySearch(multiValues, dateType) >= 0) {
+        retMap.put("multi", new String[] {date1, date2});
+    }
+    else if (Arrays.binarySearch(rangeValues, dateType) >= 0) {
+        retMap.put("range", new String[] {date1, date2});
+    }
+    return retMap;
+}
+
+public String cleanDate(String date, String mode, boolean convert) {
+    // dates from 008 may have 'u's. from 260 may have '-'s and may end with '?'
+    //   (in both cases there are erroneous uses of 'x' and '?' and other 
+    //   chars where there shouldn't be, so we just replace all non-digits.)
+    // mode can be "down" to replace nondigits with '0's
+    //   "up" to replace nondigits with '9's.
+    //   "mid" to replace nondigits with '5's.
+    //   "none" for display date -- replace nondigits with '-'s and add a '?'
+    // convert is a flag for whether to convert 'uuuu' / '9999' to current year.
+    //   if convert = false, we return null for such dates
+    if (date.length() == 0) return null;
+    clean = ONLY_FOUR_DIGIT_PATTERN.matcher(date);
+    matcher_four_nines = FOUR_NINES_PATTERN.matcher(date);
+    matcher_four_u = FOUR_U_PATTERN.matcher(date);
+    Calendar cal = Calendar.getInstance();
+    int this_year = cal.get(Calendar.YEAR);
+    String retStr = "";
+    if (matcher_four_nines.find() || matcher_four_u.find()) {
+        // go ahead and return -- don't need to check range
+        if (convert) {
+            return "" + this_year;
+        }
+        else return null;
+    }
+    else if (clean.find()) {
+        retStr = date;
+    }
+    else {
+        // not a straight-up 4-digit year.  clean stuff!
+        if (date.length() > 4) {
+            // trim '?'s from 260s
+            if (date.charAt(4) == '?') {
+                date = date.substring(0, 4);
+            }
+            else {
+                // no other reason to have a date longer than 4 chars...
+                return null;
+            }
+        }
+        // now go through the modes
+        if ("down".equals(mode)) {
+            retStr = date.replaceAll("[^\\d]", "0"); 
+        }
+        else if ("up".equals(mode)) {
+            retStr = date.replaceAll("[^\\d]", "9"); 
+            if (new Integer(retStr) > this_year) {
+                retStr = "" + this_year;
+            }
+        }
+        else if ("mid".equals(mode)) {
+            retStr = date.replaceAll("[^\\d]", "5"); 
+        }
+        else if ("none".equals(mode)) {
+            retStr = date.replaceAll("[^\\d]", "-"); 
+            // return for display don't need to check range
+            return retStr + "?";
+        }
+    }
+    // it's now guaranteed clean; retStr should convert to Integer no problems
+    if (retStr.length() > 0) {
+        // is the date in range?
+        Integer d = new Integer(retStr);
+        if (d > 500 && d < this_year + 7) {
+            return retStr;
+        }
+    }
+    return null;
+}
+
+public String getDebugString(Record record) {
+    // TODO: make this actually give us a pretty display date.
+    Map map;
+    map = prep008Dates(record);
+    if (map == null) {
+        // mat type j or s -- we don't want any dates
+        return "mattype j or s";
+    }
+    if (map.size() > 2) {
+        // here map will always have two entries: matType, source
+        return strMap(map);
+    }
+    map = prepOtherDates(record);
+    if (map != null) {
+        return strMap(map);
+    }
+    return "no display date";
+ 
+    //keep this in case needed for debugging...
+    //Set result = processFacetDate(map);
+    //if (result != null) {
+    //    return Arrays.toString(result.toArray());
+    //}
+}
+public String strMap(Map mp) {
+    Iterator it = mp.entrySet().iterator();
+    retStr = "";
+    while (it.hasNext()) {
+        Map.Entry pairs = (Map.Entry)it.next();
+        retStr = retStr + pairs.getKey() + " = " + Arrays.toString(pairs.getValue()) + " ; ";
+        //System.out.println(pairs.getKey() + " = " + pairs.getValue());
+    }
+    return retStr;
+}

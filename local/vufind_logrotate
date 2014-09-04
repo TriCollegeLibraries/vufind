@@ -1,0 +1,10 @@
+# vufind logs logrotate settings
+# symlink to this in /etc/logrotate.d 
+/usr/local/vudev/logs/*.log {
+    weekly
+    rotate 8
+    copytruncate
+    missingok
+    notifempty
+    dateext
+}

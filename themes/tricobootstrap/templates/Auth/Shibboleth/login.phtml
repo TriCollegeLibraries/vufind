@@ -1,0 +1,11 @@
+<? $account = $this->auth()->getManager(); ?>
+<? $sessionInitiator = $account->getSessionInitiator($this->serverUrl($this->url('myresearch-home'))); ?>
+<? if ($this->auth()->usingEzProxy()): ?>
+  <p>
+    There is currently a conflict between EZProxy and Tripod. To log in with your campus username and password open a new, non-EZProxy, window or tab, navigate to tripod, and click the Login link.
+  </p>
+<? else: ?>
+  <p>
+    If you have a Bryn Mawr, Haverford, or Swarthmore email address, <a href="<?=$this->escapeHtmlAttr($sessionInitiator)?>">enter your campus username and password</a> to log in.
+  </p>
+<? endif; ?>

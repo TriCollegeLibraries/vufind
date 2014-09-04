@@ -1,0 +1,1315 @@
+<add>
+  <doc>
+    <field name="id">africawide</field>
+    <field name="title">Africa-wide</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2891473</field>
+    <field name="bibid">.b2891473</field>
+    <field name="description">Access to multi-disciplinary information on Africa including books, journal articles, maps and music recordings.</field>
+    <field name="keywords">africa wide</field>
+    <field name="keywords">africawide</field>
+    <field name="keywords">african studies</field>
+    <field name="keywords">south african studies</field>
+    <field name="keywords">africa-wide nipad</field>
+  </doc>
+  <doc>
+    <field name="id">americahandl</field>
+    <field name="title">America, history and life</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2449753</field>
+    <field name="bibid">.b2449753</field>
+    <field name="description">Provides abstracts of journals, reviews and dissertations on United States and Canadian history from prehistory to the present.</field>
+    <field name="keywords">america history and life</field>
+    <field name="keywords">american history and life</field>
+    <field name="keywords">us history</field>
+    <field name="keywords">united states history</field>
+  </doc>
+  <doc>
+    <field name="id">american_periodicals</field>
+    <field name="title">American Periodicals Series Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3544106</field>
+    <field name="bibid">.b3544106</field>
+    <field name="description">Includes digitized images of the pages of American magazines and journals published from colonial days to the dawn of the 20th century.</field>
+    <field name="keywords">american periodicals</field>
+    <field name="keywords">american periodicals series</field>
+    <field name="keywords">american periodicals series online</field>
+    <field name="keywords">aps</field>
+    <field name="keywords">aps online</field>
+  </doc>
+  <doc>
+    <field name="id">ancestry</field>
+    <field name="title">Ancestry.com</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2728043</field>
+    <field name="bibid">.b2728043</field>
+    <field name="description">Wide-ranging collections of information for conducting genealogical and local history research.</field>
+    <field name="keywords">ancestry com</field>
+    <field name="keywords">ancestry.com</field>
+    <field name="keywords">ancestry</field>
+    <field name="keywords">ancestry (online)</field>
+    <field name="keywords">ancestry com (online)</field>
+    <field name="keywords">ancestry.com (online)</field>
+    <field name="keywords">myfamily com</field>
+    <field name="keywords">myfamily.com</field>
+    <field name="keywords">genealogy</field>
+  </doc>
+  <doc>
+    <field name="id">annee</field>
+    <field name="title">Année philologique</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2616141</field>
+    <field name="bibid">.b2616141</field>
+    <field name="description">Bibliographic records of journal articles, conference proceedings and collection articles on many subject areas relating to Classical Studies.</field>
+    <field name="keywords">année philologique</field>
+    <field name="keywords">anée philologique</field>
+    <field name="keywords">annee philologique</field>
+    <field name="keywords">l'annee philologique</field>
+  </doc>
+  <doc>
+    <field name="id">annual_reviews</field>
+    <field name="title">Annual Reviews</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3342813</field>
+    <field name="bibid">.b3342813</field>
+    <field name="description">Annual Reviews volumes are published each year for 41 focused disciplines within the Biomedical, Life, Physical, and Social Sciences including Economics.</field>
+    <field name="keywords">annual review</field>
+    <field name="keywords">annual reviews</field>
+    <field name="keywords">annual review of anthropology</field>
+    <field name="keywords">annual review of political science</field>
+    <field name="keywords">annual review of sociology</field>
+    <field name="keywords">annual review of psychology</field>
+    <field name="keywords">review articles</field>
+    <field name="keywords">political science review articles</field>
+    <field name="keywords">sociology review articles</field>
+    <field name="keywords">anthropology review articles</field>
+  </doc>
+  <doc>
+    <field name="id">anthro_source</field>
+    <field name="title">AnthroSource</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2732712</field>
+    <field name="bibid">.b2732712</field>
+    <field name="description">Provides full text articles from American Anthropological Association journals, newsletters, and bulletins. Covers 1888-present.</field>
+    <field name="keywords">anthro source</field>
+    <field name="keywords">anthrosource</field>
+    <field name="keywords">anthrasource</field>
+    <field name="keywords">anthropology source</field>
+  </doc>
+  <doc>
+    <field name="id">art_index</field>
+    <field name="title">Art Index</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2292501</field>
+    <field name="bibid">.b2292501</field>
+    <field name="description">Abstracts of journals, museum bulletins and yearbooks in the fields of art, architecture, decorative arts and photography.</field>
+    <field name="keywords">art index</field>
+    <field name="keywords">artindex</field>
+    <field name="keywords">art index online</field>
+  </doc>
+  <doc>
+    <field name="id">artstor</field>
+    <field name="title">ARTstor</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2658012</field>
+    <field name="bibid">.b2658012</field>
+    <field name="description">Digital library that provides access to thousands of digital images derived from a variety of museum, library and archival collections.</field>
+    <field name="keywords">artstor</field>
+    <field name="keywords">artstore</field>
+    <field name="keywords">tripix</field>
+    <field name="keywords">art-stor</field>
+    <field name="keywords">art store</field>
+  </doc>
+  <doc>
+    <field name="id">atla</field>
+    <field name="title">ATLA Religion Database + ATLAS</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2183620</field>
+    <field name="bibid">.b2183620</field>
+    <field name="description">Online access to the entire core collection of more than fifty significant scholarly journals in the field of religion.</field>
+    <field name="keywords">atla</field>
+    <field name="keywords">atla religion database</field>
+    <field name="keywords">American Theological Library Association database</field>
+    <field name="keywords">atla religion database and atlas</field>
+    <field name="keywords">atla religion and atlas</field>
+    <field name="keywords">atla religion database + atlas</field>
+  </doc>
+  <doc>
+    <field name="id">avery_index</field>
+    <field name="title">Avery Index to Architectural Periodicals</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2284947</field>
+    <field name="bibid">.b2284947</field>
+    <field name="description">Provides citations to journals in the fields of architecture, city planning, interior design, historic preservation and archaeology. Covers 1930-present.</field>
+    <field name="keywords">avery index</field>
+    <field name="keywords">avery</field>
+    <field name="keywords">architectural index</field>
+    <field name="keywords">avery index to architectural periodicals</field>
+    <field name="keywords">architecture periodicals</field>
+    <field name="keywords">architectural periodicals</field>
+  </doc>
+  <doc>
+    <field name="id">biblio_asian_studies</field>
+    <field name="title">Bibliography of Asian Studies</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2398373</field>
+    <field name="bibid">.b2398373</field>
+    <field name="description">Journal articles, book chapters, conference proceedings, and other material on all subjects pertaining to East, Southeast, and South Asia.</field>
+    <field name="keywords">asian studies bibliography</field>
+    <field name="keywords">bibliography of asian studies</field>
+    <field name="keywords">asian bibliography</field>
+    <field name="keywords">asian studies</field>
+  </doc>
+  <doc>
+    <field name="id">biological_sciences</field>
+    <field name="title">Biological Sciences</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2676792</field>
+    <field name="bibid">.b2676792</field>
+    <field name="description">Abstracts and citations to journal articles, books, conference proceedings, technical reports and patents, and other material in biomedicine, biotechnology, zoology, ecology, and related fields.</field>
+    <field name="keywords">biological sciences</field>
+    <field name="keywords">biological science</field>
+    <field name="keywords">biologicalsciences</field>
+  </doc>
+  <doc>
+    <field name="id">bio_one</field>
+    <field name="title">BioOne</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2537077</field>
+    <field name="bibid">.b2537077</field>
+    <field name="description">Full-text access to research journal articles in such fields as the biological, ecological, and environmental sciences.</field>
+    <field name="keywords">bioone</field>
+    <field name="keywords">bio one</field>
+    <field name="keywords">bioone online</field>
+    <field name="keywords">bio1</field>
+  </doc>
+  <doc>
+    <field name="id">bio_review_index</field>
+    <field name="title">Book Review Index</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2929678</field>
+    <field name="bibid">.b2929678</field>
+    <field name="description">Comprehensive online guide to book reviews with over five million review citations.</field>
+    <field name="keywords">book review index</field>
+    <field name="keywords">book reviews index</field>
+  </doc>
+  <doc>
+    <field name="id">cell</field>
+    <field name="title">Cell</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3243087</field>
+    <field name="bibid">.b3243087</field>
+    <field name="description">A biweekly, peer-reviewed scientific journal publishing research papers across a broad range of disciplines within the life sciences.</field>
+    <field name="keywords">cell</field>
+    <field name="keywords">cell journal</field>
+    <field name="keywords">cell online</field>
+  </doc>
+  <doc>
+    <field name="id">chronicle_of_he</field>
+    <field name="title">Chronicle of Higher Education</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3231982</field>
+    <field name="bibid">.b3231982</field>
+    <field name="description">Weekly news and job-information source for college and university faculty members, administrators, and students.</field>
+    <field name="keywords">chronicle of higher education</field>
+    <field name="keywords">chronicle of higher ed</field>
+  </doc>
+  <doc>
+    <field name="id">clase_and_periodica</field>
+    <field name="title">Clase &amp; Periodica</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2669375</field>
+    <field name="bibid">.b2669375</field>
+    <field name="description">Citations to Latin American and Caribbean journal articles, books, and other material in the social sciences, humanities, science and technology fields.</field>
+    <field name="keywords">clase and periodica</field>
+    <field name="keywords">classe and periodica</field>
+    <field name="keywords">clasee and periodica</field>
+  </doc>
+  <doc>
+    <field name="id">cognet</field>
+    <field name="title">CogNet Library</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2575558</field>
+    <field name="bibid">.b2575558</field>  
+    <field name="description">Searchable collection of journals, books, reference works, and conference materials in the brain and cognitive sciences.</field>
+    <field name="keywords">cognet</field>
+    <field name="keywords">cognet library</field>
+    <field name="keywords">mit cognet library</field>
+    <field name="keywords">cognet library (online)</field>
+  </doc>
+  <doc>
+    <field name="id">cq_researcher</field>
+    <field name="title">CQ Researcher</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3244026</field>
+    <field name="bibid">.b3244026</field>
+    <field name="description">Original reporting and analysis on issues in the news, focusing on the economy, education, the environment, health, international affairs, social trends, and technology.</field>
+    <field name="keywords">cq researcher</field>
+    <field name="keywords">cq research</field>
+    <field name="keywords">cq researchers</field>
+    <field name="keywords">cq global researchers</field>
+    <field name="keywords">cq global researcher</field>
+    <field name="keywords">cq researcher online</field>
+    <field name="keywords">congressional quarterly</field>
+  </doc>
+  <doc>
+    <field name="id">credo</field>
+    <field name="title">Credo Reference</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2731825</field>
+    <field name="bibid">.b2731825</field>
+    <field name="description">More than 240 reference works in various fields.</field>
+    <field name="keywords">credo</field>
+    <field name="keywords">credo reference</field>
+    <field name="keywords">xrefer</field>
+    <field name="keywords">xreferplus</field>
+    <field name="keywords">reference</field>
+    <field name="keywords">encyclopedias</field>
+    <field name="keywords">dictionaries</field>
+  </doc>
+  <doc>
+    <field name="id">dissertations_at_bmc</field>
+    <field name="title">Dissertations @ Bryn Mawr College</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2888963</field>
+    <field name="bibid">.b2888963</field>
+    <field name="description">Citations, abstracts, and previews of dissertations and theses submitted by Bryn Mawr College and published in UMI's Dissertation abstracts database.</field>
+    <field name="keywords">bryn mawr dissertations</field>
+    <field name="keywords">bryn mawr theses</field>
+    <field name="keywords">dissertations at bryn mawr college</field>
+    <field name="keywords">dissertations at bryn mawr</field>
+    <field name="keywords">theses at bryn mawr</field>
+  </doc>
+  <doc>
+    <field name="id">dissertations_and_theses</field>
+    <field name="title">Dissertations &amp; Theses</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3545879</field>
+    <field name="bibid">.b3545879</field>
+    <field name="description">A collection of dissertations and theses from around the world in the Humanities and Social Sciences.</field>
+    <field name="keywords">dissertations and theses</field>
+    <field name="keywords">Proquest dissertations and theses</field>
+    <field name="keywords">dissertations and theses (ProQuest)</field>
+    <field name="keywords">dissertations and thesis</field>
+    <field name="keywords">Proquest dissertations</field>
+    <field name="keywords">dissertations</field>
+    <field name="keywords">dissertation abstracts</field>
+  </doc>
+  <doc>
+    <field name="id">dyabola</field>
+    <field name="title">DYABOLA</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2619089</field>
+    <field name="bibid">.b2619089</field>
+    <field name="description">Subject catalogs of publications on the history of art and the ancient world.</field>
+    <field name="keywords">projekt dyabola</field>
+    <field name="keywords">project dyabola</field>
+    <field name="keywords">dyabola</field>
+    <field name="keywords">dyabola online</field>
+  </doc>
+  <doc>
+    <field name="id">EBL</field>
+    <field name="title">EBL ebook library</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3696669</field>
+    <field name="bibid">.b3696669</field>
+    <field name="description">Ebook content across all subject areas.</field>
+    <field name="keywords">ebl</field>
+    <field name="keywords">ebl ebook library</field>
+    <field name="keywords">ebl e-book library</field>
+    <field name="keywords">ebl books</field>
+    <field name="keywords">ebl ebooks</field>
+    <field name="keywords">ebl e-books</field>
+  </doc>
+  <doc>
+    <field name="id">ebrary</field>
+    <field name="title">Ebrary</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3153223</field>
+    <field name="bibid">.b3153223</field>
+    <field name="description">Includes more than 30,000 current e-books from leading publishers in all subjects.</field>
+    <field name="keywords">ebrary</field>
+    <field name="keywords">ebrary library</field>
+    <field name="keywords">ebrary ebook library</field>
+    <field name="keywords">e-brary</field>
+    <field name="keywords">e-brary ebooks</field>
+    <field name="keywords">ebrary books</field>
+  </doc>
+  <doc>
+    <field name="id">econlit</field>
+    <field name="title">EconLit</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2377355</field>
+    <field name="bibid">.b2377355</field>
+    <field name="description">Abstracts to economic journals, books, book reviews, dissertations, and working papers.</field>
+    <field name="keywords">econlit</field>
+    <field name="keywords">econliterature</field>
+    <field name="keywords">econ lit</field>
+    <field name="keywords">econlit online</field>
+    <field name="keywords">economics</field>
+    <field name="keywords">economics journal articles</field>
+    <field name="keywords">econ literature</field>
+    <field name="keywords">econliterature</field>
+  </doc>
+  <doc>
+    <field name="id">ecco</field>
+    <field name="title">Eighteenth Century collections online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2719941</field>
+    <field name="bibid">.b2719941</field>
+    <field name="description">Full-text access to English-language titles and editions published between 1701 and 1800.</field>
+    <field name="keywords">ecco</field>
+    <field name="keywords">eighteenth century collections</field>
+    <field name="keywords">eighteenth-century collections</field>
+    <field name="keywords">eighteenth century collections online</field>
+    <field name="keywords">eighteenth-century collections online</field>
+    <field name="keywords">18th-century collections</field>
+    <field name="keywords">18th century collections</field>
+    <field name="keywords">18th-century collections online</field>
+    <field name="keywords">18th century collections online</field>
+    <field name="keywords">18th c. collections</field>
+    <field name="keywords">18th c. collections online</field>
+    <field name="keywords">eighteenth century collection</field>
+  </doc>
+  <doc>
+    <field name="id">eric</field>
+    <field name="title">ERIC</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2721574</field>
+    <field name="bibid">.b2721574</field>
+    <field name="description">Abstracts to journal articles and ERIC Digest records on all aspects of education.</field>
+    <field name="keywords">eric</field>
+    <field name="keywords">educational resources information center</field>
+    <field name="keywords">eric online</field>
+    <field name="keywords">eric (Proquest)</field>
+    <field name="keywords">education resources information center</field>
+    <field name="keywords">e.r.i.c.</field>
+  </doc>
+  <doc>
+    <field name="id">fio</field>
+    <field name="title">Film Indexes Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2726242</field>
+    <field name="bibid">.b2726242</field>
+    <field name="description">An authoritative alternative to the IMDB.</field>
+    <field name="keywords">film indexes online</field>
+    <field name="keywords">film index online</field>
+    <field name="keywords">bfi film index</field>
+    <field name="keywords">bfi film index international</field>
+    <field name="keywords">afi catalog</field>
+  </doc>
+  <doc>
+    <field name="id">fli</field>
+    <field name="title">Film Literature Index</field>
+    <field name="url">http://webapp1.dlib.indiana.edu/fli/index.jsp</field>
+    <field name="bibid">none</field>
+    <field name="description">Articles, film reviews and book reviews from film and television journals from 30 countries.</field>
+    <field name="keywords">film literature index</field>
+    <field name="keywords">fli</field>
+    <field name="keywords">fli online</field>
+    <field name="keywords">film reviews</field>
+    <field name="keywords">film studies</field>
+  </doc>
+  <doc>
+    <field name="id">genderwatch</field>
+    <field name="title">GenderWatch</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2398587</field>
+    <field name="bibid">.b2398587</field>
+    <field name="description">Full-text access to scholarly journals, magazines, newspapers, books, and other material focused on how gender affects a broad spectrum of subject areas.</field>
+    <field name="keywords">genderwatch</field>
+    <field name="keywords">gender watch</field>
+    <field name="keywords">women r</field>
+    <field name="keywords">genderwatch (Proquest)</field>
+    <field name="keywords">gender studies</field>
+    <field name="keywords">gender</field>
+    <field name="keywords">gender identity</field>
+  </doc>
+  <doc>
+    <field name="id">google_scholar</field>
+    <field name="title">Google Scholar</field>
+    <field name="url">http://scholar.google.com/</field>
+    <field name="bibid">none</field>
+    <field name="description">Scholarly literature from all broad areas of research.</field>
+    <field name="keywords">google scholar</field>
+    <field name="keywords">googlescholar</field>
+    <field name="keywords">googlescolar</field>
+    <field name="keywords">google scolar</field>
+    <field name="keywords">google articles</field>
+  </doc>
+  <doc>
+    <field name="id">hlas</field>
+    <field name="title">Handbook of Latin American Studies (HLAS)</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2420853</field>
+    <field name="bibid">.b2420853</field>
+    <field name="description">Records describing books, book chapters, articles, and conference papers published in the field of Latin American studies.</field>
+    <field name="keywords">HLAS</field>
+    <field name="keywords">handbook of latin american studies</field>
+    <field name="keywords">handbook of latin american</field>
+    <field name="keywords">latin american studies</field>
+    <field name="keywords">latin-american studies</field>
+  </doc>
+  <doc>
+    <field name="id">hapi</field>
+    <field name="title">HAPI Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2533196</field>
+    <field name="bibid">.b2533196</field>
+    <field name="description">Citations to scholarly journal articles published in Latin America, Mexico, Central America and the Caribbean.</field>
+    <field name="keywords">hapi</field>
+    <field name="keywords">hapi online</field>
+    <field name="keywords">hispanic american periodicals index</field>
+    <field name="keywords">hispanic american index</field>
+    <field name="keywords">hispanic american periodicals</field>
+    <field name="keywords">hispanic-american periodicals index</field>
+    <field name="keywords">hispanic periodicals</field>
+  </doc>
+  <doc>
+    <field name="id">haverford_theses</field>
+    <field name="title">Haverford Senior Thesis Archive</field>
+    <field name="url">http://library.haverford.edu/research/#thesis-archive</field>
+    <field name="bibid">none</field>
+    <field name="description">Electronic and print versions of senior theses from Haverford students.</field>
+    <field name="keywords">haverford senior theses</field>
+    <field name="keywords">haverford senior thesis archive</field>
+    <field name="keywords">haverford theses</field>
+    <field name="keywords">haverford thesis</field>
+    <field name="keywords">haverford thesis archive</field>
+    <field name="keywords">hc thesis archive</field>
+    <field name="keywords">haverford college senior thesis</field>
+    <field name="keywords">haverford senior thesis</field>
+  </doc>
+  <doc>
+    <field name="id">historical_abstracts</field>
+    <field name="title">Historical Abstracts</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2449752</field>
+    <field name="bibid">.b2449752</field>
+    <field name="description">Abstracts of journal articles, books, book reviews and dissertations that cover world history from 1450 to the present.</field>
+    <field name="keywords">history</field>
+    <field name="keywords">historical abstracts</field>
+    <field name="keywords">historical abstract</field>
+    <field name="keywords">historicalabstracts</field>
+    <field name="keywords">history abstracts</field>
+    <field name="keywords">historical abstracts online</field>
+  </doc>
+  <doc>
+    <field name="id">ieee</field>
+    <field name="title">IEEE Xplore</field>
+    <field name="url">http://ieeexplore.ieee.org/Xplore/guesthome.jsp</field>
+    <field name="bibid">none</field>
+    <field name="description">Search 151 journals, more than 900 conference proceedings, more than 3,400 technical standards, and more than 400 ebooks and 200 educational courses.</field>
+    <field name="keywords">ieee xplore</field>
+    <field name="keywords">ieee explore</field>
+    <field name="keywords">ieee</field>
+  </doc>
+  <doc>
+    <field name="id">index_islamicus</field>
+    <field name="title">Index Islamicus</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2641714</field>
+    <field name="bibid">.b2641714</field>
+    <field name="description">Citations to literature on Islam, the Middle East and Muslim areas of Asia and Africa, and Muslim minorities elsewhere.</field>
+    <field name="keywords">index islamicus</field>
+    <field name="keywords">indexislamicus</field>
+    <field name="keywords">islam studies</field>
+    <field name="keywords">islamicus</field>
+  </doc>
+  <doc>
+    <field name="id">int_encylopedia_dance</field>
+    <field name="title">International Encyclopedia of Dance</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3603497</field>
+    <field name="bibid">.b3603497</field>
+    <field name="description">The fully searchable electronic version provides access to nearly 2,000 articles on all aspects of dance, including theatrical, ritual, dance-drama, folk, traditional, ethnic, and social dance. Cultural and national overviews are accompanied by entries on dance forms, music and costumes, performances, and biographies of dancers and choreographers. Entries are also A-Z browsable.</field>
+    <field name="keywords">international encyclopedia of dance</field>
+    <field name="keywords">dance encyclopedia</field>
+    <field name="keywords">dance</field>
+    <field name="keywords">encyclopedia of dance</field>
+    <field name="keywords">international dance encyclopedia</field>
+  </doc>
+  <doc>
+    <field name="id">ifs</field>
+    <field name="title">Internatinal Financial Statistics</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3152036</field>
+    <field name="bibid">.b3152036</field>
+    <field name="description">Contains time series data for most IMF members (over 200 countries).</field>
+    <field name="keywords">IFS</field>
+    <field name="keywords">international financial statistics</field>
+    <field name="keywords">financial statistics</field>
+    <field name="keywords">finance</field>
+  </doc>
+  <doc>
+    <field name="id">iipa</field>
+    <field name="title">International Index to the Performing Arts</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2495690</field>
+    <field name="bibid">.b2495690</field>
+    <field name="description">Abstracts and full-text journal articles covering a broad spectrum of the arts and entertainment industry.</field>
+    <field name="keywords">iipa</field>
+    <field name="keywords">international index to the performing arts</field>
+    <field name="keywords">index to the performing arts</field>
+    <field name="keywords">iipa full text</field>
+    <field name="keywords">iipa full-text</field>
+    <field name="keywords">iipa online</field>
+    <field name="keywords">performing arts</field>
+  </doc>
+  <doc>
+    <field name="id">imb</field>
+    <field name="title">International Medieval Bibliography online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2578836</field>
+    <field name="bibid">.b2578836</field>
+    <field name="description">Abstracts and citations to articles on medieval subjects in journals, Festschriften, conference proceedings, and collected essays.</field>
+    <field name="keywords">international medieval bibliography</field>
+    <field name="keywords">medieval studies</field>
+    <field name="keywords">middle ages</field>
+    <field name="keywords">international medieval</field>
+  </doc>
+  <doc>
+    <field name="id">jstor</field>
+    <field name="title">JSTOR</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2331683</field>
+    <field name="bibid">.b2331683</field>
+    <field name="description">Articles from the top journals in most disciplines.</field>
+    <field name="keywords">jstor</field>
+    <field name="keywords">jstor online</field>
+    <field name="keywords">jstore</field>
+    <field name="keywords">j-stor</field>
+  </doc>
+  <doc>
+    <field name="id">lexisnexis</field>
+    <field name="title">LexisNexis Academic</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2379408</field>
+    <field name="bibid">.b2379408</field>
+    <field name="description">Thousands of newspapers, magazines, transcripts, &amp; legal materials.</field>
+    <field name="keywords">lexisnexis academic</field>
+    <field name="keywords">lexisnexis</field>
+    <field name="keywords">lexis nexis</field>
+    <field name="keywords">lexus nexus</field>
+    <field name="keywords">lexis nexis academic</field>
+    <field name="keywords">lexusnexus</field>
+    <field name="keywords">newspapers</field>
+    <field name="keywords">lexis</field>
+    <field name="keywords">lexus</field>
+  </doc>
+  <doc>
+    <field name="id">life</field>
+    <field name="title">Life</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b1582211</field>
+    <field name="bibid">.b1582211</field>
+    <field name="description">Weekly U.S. news magazine with an emphasis on photojournalism.</field>
+    <field name="keywords">life</field>
+    <field name="keywords">life magazine</field>
+    <field name="keywords">life (chicago)</field>
+  </doc>
+  <doc>
+    <field name="id">literature_resource_center</field>
+    <field name="title">Literature Resource Center</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2614583</field>
+    <field name="bibid">.b2614583</field>
+    <field name="description">Biographies, bibliographies, and critical analyses of authors from every age and literary discipline.</field>
+    <field name="keywords">literature resource center</field>
+    <field name="keywords">literature resource centre</field>
+    <field name="keywords">literature resource center online</field>
+  </doc>
+  <doc>
+    <field name="id">llba</field>
+    <field name="title">LLBA: Lingustics &amp; Language Behavior Abstracts</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2685041</field>
+    <field name="bibid">.b2685041</field>
+    <field name="description">Abstracts of the world's literature in linguistics and language-related research.</field>
+    <field name="keywords">llba</field>
+    <field name="keywords">linguistics and language behavior abstracts</field>
+    <field name="keywords">linguistics and language behavior</field>
+    <field name="keywords">llba online</field>
+    <field name="keywords">linguistics articles</field>
+    <field name="keywords">linguistics</field>
+  </doc>
+  <doc>
+    <field name="id">mathscinet</field>
+    <field name="title">MathSciNet</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2382543</field>
+    <field name="bibid">.b2382543</field>
+    <field name="description">Citations to the world's mathematical literature including all aspects of mathematics, statistics, and related areas.</field>
+    <field name="keywords">mathscinet</field>
+    <field name="keywords">mathematical reviews</field>
+    <field name="keywords">math reviews</field>
+    <field name="keywords">mathsci</field>
+    <field name="keywords">math articles</field>
+    <field name="keywords">mathematics articles</field>
+  </doc>
+  <doc>
+    <field name="id">mlaib</field>
+    <field name="title">MLA International Bibliography</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2723020</field>
+    <field name="bibid">.b2723020</field>
+    <field name="description">Citations to journal articles, books, conference proceedings, and other materials in the areas of literature, language, linguistics, film, theatre and folklore.</field>
+    <field name="keywords">mlaib</field>
+    <field name="keywords">mla international bibliography</field>
+    <field name="keywords">mla international</field>
+    <field name="keywords">mla bibliography</field>
+    <field name="keywords">the mla</field>
+    <field name="keywords">mla international bibliography online</field>
+    <field name="keywords">literature articles</field>
+    <field name="keywords">literature research</field>
+    <field name="keywords">literary research</field>
+    <field name="keywords">folklore articles</field>
+  </doc>
+  <doc>
+    <field name="id">nasa_ads</field>
+    <field name="title">NASA ADS</field>
+    <field name="url">http://adswww.harvard.edu/</field>
+    <field name="bibid">none</field>
+    <field name="description">A NASA-funded project that provides abstracts and/or citations to journals in astronomy and astrophysics.</field>
+    <field name="keywords">nasa ads</field>
+    <field name="keywords">nasa astrophysics data</field>
+    <field name="keywords">nasa astrophysics data system</field>
+    <field name="keywords">sao/nasa astrophysics data system</field>
+    <field name="keywords">astrophysics data</field>
+    <field name="keywords">astrophysics data system</field>
+  </doc>
+  <doc>
+    <field name="id">nature</field>
+    <field name="title">Nature (Online)</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3228837</field>
+    <field name="bibid">.b3228837</field>
+    <field name="description">A weekly international, interdisciplinary peer-reviewed journal of science.</field>
+    <field name="keywords">nature</field>
+    <field name="keywords">nature online</field>
+    <field name="keywords">nature journal</field>
+  </doc>
+  <doc>
+    <field name="id">naxos</field>
+    <field name="title">Naxos Music Library</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2692787</field>
+    <field name="bibid">.b2692787</field>
+    <field name="description">Online audio recordings of classical, folk, jazz, and world music from the Naxos, Marco Polo, and Da Capo labels.</field>
+    <field name="keywords">naxos</field>
+    <field name="keywords">naxos music</field>
+    <field name="keywords">naxos music library</field>
+    <field name="keywords">nml</field>
+  </doc>
+  <doc>
+    <field name="id">nytimes</field>
+    <field name="title">New York Times on the Web</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3246792</field>
+    <field name="bibid">.b3246792</field>
+    <field name="description">Full-text access to news articles, blog posts, videos, images, and multimedia features.</field>
+    <field name="keywords">new york times</field>
+    <field name="keywords">new york times on the web</field>
+    <field name="keywords">nytimes</field>
+    <field name="keywords">newyorktimes</field>
+    <field name="keywords">new york city news</field>
+    <field name="keywords">new york daily times</field>
+    <field name="keywords">new york news</field>
+    <field name="keywords">new york newspaper</field>
+    <field name="keywords">ny times</field>
+  </doc>
+  <doc>
+    <field name="id">ncco</field>
+    <field name="title">Nineteenth Century Collections Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3801718</field>
+    <field name="bibid">.b3801718</field>
+    <field name="description">Full-text access to English-language titles and editions published between 1801 and 1900.</field>
+    <field name="keywords">ncco</field>
+    <field name="keywords">nineteenth century collections online</field>
+    <field name="keywords">nineteenth-century collections online</field>
+    <field name="keywords">nineteenth century collections</field>
+    <field name="keywords">nineteenth-century collections</field>
+    <field name="keywords">19th century collections online</field>
+    <field name="keywords">19th-century collections online</field>
+    <field name="keywords">19th century collections</field>
+    <field name="keywords">19th-century collections</field>
+  </doc>
+  <doc>
+    <field name="id">nineteenth_century_masterfile</field>
+    <field name="title">Nineteenth Century Masterfile</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2470165</field>
+    <field name="bibid">.b2470165</field>
+    <field name="description">Includes more than seventy seminal as well as lesser known contemporary indexes to English-language publishing prior to 1930.</field>
+    <field name="keywords">nineteenth century masterfile</field>
+    <field name="keywords">nineteenth-century masterfile</field>
+    <field name="keywords">19th century masterfile</field>
+    <field name="keywords">19th-century masterfile</field>
+    <field name="keywords">nineteenth century master file</field>
+    <field name="keywords">nineteenth-century master file</field>
+    <field name="keywords">19thcentury masterfile</field>
+    <field name="keywords">19th century master file</field>
+  </doc>
+  <doc>
+    <field name="id">oxford_art</field>
+    <field name="title">Oxford Art Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2417823</field>
+    <field name="bibid">.b2417823</field>
+    <field name="description">Full-text articles on every aspect of the visual arts from prehistory through the present.</field>
+    <field name="keywords">oxford art</field>
+    <field name="keywords">oxford art online</field>
+    <field name="keywords">grove art</field>
+    <field name="keywords">grove art online</field>
+    <field name="keywords">benezit</field>
+    <field name="keywords">benezit dictionary</field>
+    <field name="keywords">benezit dictionary of artists</field>
+    <field name="keywords">encyclopedia of aesthetics</field>
+  </doc>
+  <doc>
+    <field name="id">oed</field>
+    <field name="title">Oxford English Dictionary</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2487748</field>
+    <field name="bibid">.b2487748</field>
+    <field name="description">Complete text of the 20-volume OED, 2nd edition, published in 1989.</field>
+    <field name="keywords">oed</field>
+    <field name="keywords">oed online</field>
+    <field name="keywords">oxford english dictionary</field>
+    <field name="keywords">oxford english dictionary online</field>
+    <field name="keywords">oxford dictionary</field>
+    <field name="keywords">english dictionary</field>
+    <field name="keywords">english language dictionary</field>
+  </doc>
+  <doc>
+    <field name="id">oxford_music</field>
+    <field name="title">Oxford Music Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3331019</field>
+    <field name="bibid">.b3331019</field>
+    <field name="description">Covers all topics related to music, including musical instruments, compositional forms and scientific topics.</field>
+    <field name="keywords">oxford music</field>
+    <field name="keywords">oxford music online</field>
+    <field name="keywords">grove music</field>
+    <field name="keywords">new grove</field>
+    <field name="keywords">grove dictionary of music</field>
+    <field name="keywords">grove dictionary of music and musicians</field>
+    <field name="keywords">new grove dictionary of music</field>
+    <field name="keywords">new grove dictionary of music and musicians</field>
+    <field name="keywords">oxford dictionary of music</field>
+    <field name="keywords">oxford companion to music</field>
+    <field name="keywords">music encyclopedia</field>
+  </doc>
+  <doc>
+    <field name="id">pais</field>
+    <field name="title">PAIS International</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2382779</field>
+    <field name="bibid">.b2382779</field>
+    <field name="description">Abstracts of journal articles, books, and other material about political, economic, social and public policy issues.</field>
+    <field name="keywords">pais</field>
+    <field name="keywords">pais international</field>
+    <field name="keywords">pais bulletin</field>
+    <field name="keywords">pais foreign language index</field>
+    <field name="keywords">public affairs information service</field>
+  </doc>
+  <doc>
+    <field name="id">periodicals_index</field>
+    <field name="title">Periodicals Index Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2412769</field>
+    <field name="bibid">.b2412769</field>
+    <field name="description">Index to journal articles in the arts, humanities, and social sciences.</field>
+    <field name="keywords">pio</field>
+    <field name="keywords">periodicals index online</field>
+    <field name="keywords">periodicals index</field>
+    <field name="keywords">periodical index online</field>
+    <field name="keywords">periodical index</field>
+    <field name="keywords">chadwyck periodicals</field>
+    <field name="keywords">chadwyck periodicals index</field>
+    <field name="keywords">journal index</field>
+  </doc>
+  <doc>
+    <field name="id">persee</field>
+    <field name="title">Persée</field>
+    <field name="url">http://www.persee.fr</field>
+    <field name="bibid">none</field>
+    <field name="description">Full-text online versions of back issues of selected French journals in the humanities and social sciences.</field>
+    <field name="keywords">persée</field>
+    <field name="keywords">persee</field>
+    <field name="keywords">perse</field>
+    <field name="keywords">persay</field>
+    <field name="keywords">per se</field>
+    <field name="keywords">parsee</field>
+    <field name="keywords">french journals</field>
+    <field name="keywords">french periodicals</field>
+  </doc>
+  <doc>
+    <field name="id">philosophers_index</field>
+    <field name="title">Philosopher's Index</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2878386</field>
+    <field name="bibid">.b2878386</field>
+    <field name="description">Citations and abstracts of journal articles, books, anthology contributions and book reviews published worldwide on philosophy and related topics.</field>
+    <field name="keywords">philosophers index</field>
+    <field name="keywords">philosopher's index</field>
+    <field name="keywords">philosopher's index online</field>
+    <field name="keywords">philosophers index online</field>
+    <field name="keywords">philosophy index</field>
+    <field name="keywords">philosopher's information center</field>
+    <field name="keywords">philosophers information center</field>
+    <field name="keywords">philosophy articles</field>
+  </doc>
+  <doc>
+    <field name="id">policyfile</field>
+    <field name="title">PolicyFile</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2360110</field>
+    <field name="bibid">.b2360110</field>
+    <field name="description">Abstracts and full-text articles on public policy research and analysis from think tanks, university research programs, research organizations and publishers.</field>
+    <field name="keywords">policyfile</field>
+    <field name="keywords">policy file</field>
+    <field name="keywords">policy file: public policy research and analysis</field>
+    <field name="keywords">public policy research</field>
+    <field name="keywords">policyfile online</field>
+    <field name="keywords">public policy articles</field>
+  </doc>
+  <doc>
+    <field name="id">project_muse</field>
+    <field name="title">Project Muse: scholarly journals online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2274241</field>
+    <field name="bibid">.b2274241</field>
+    <field name="description">Access to journals published by the Johns Hopkins University Press. Disciplines covered are humanities, social sciences, and mathematics.</field>
+    <field name="keywords">project muse</field>
+    <field name="keywords">projectmuse</field>
+    <field name="keywords">project muse journals</field>
+    <field name="keywords">muse</field>
+    <field name="keywords">johns hopkins journals</field>
+  </doc>
+  <doc>
+    <field name="id">proquest_education</field>
+    <field name="title">Proquest Education Journals</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3600901</field>
+    <field name="bibid">.b3600901</field>
+    <field name="description">Covers lower and higher education, special education, home schooling, adult education, and other related topics.</field>
+    <field name="keywords">proquest education</field>
+    <field name="keywords">proquest education journals</field>
+    <field name="keywords">education journals</field>
+  </doc>
+  <doc>
+    <field name="id">proquest_research</field>
+    <field name="title">Proquest Research Library</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2722843</field>
+    <field name="bibid">.b2722843</field>
+    <field name="description">Citations and full-text articles in a variety of disciplines.</field>
+    <field name="keywords">proquest research</field>
+    <field name="keywords">proquest research library</field>
+    <field name="keywords">proquest</field>
+  </doc>
+  <doc>
+    <field name="id">psycarticles</field>
+    <field name="title">PsycARTICLES</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2572735</field>
+    <field name="bibid">.b2572735</field>
+    <field name="description">Full text access to articles from journals published by APA and allied organizations.</field>
+    <field name="keywords">psycarticles</field>
+    <field name="keywords">psycharticles</field>
+    <field name="keywords">psyc articles</field>
+    <field name="keywords">psych articles</field>
+    <field name="keywords">psychology articles</field>
+    <field name="keywords">psycharticles online</field>
+  </doc>
+  <doc>
+    <field name="id">psycinfo</field>
+    <field name="title">PsycINFO</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2382739</field>
+    <field name="bibid">.b2382739</field>
+    <field name="description">Abstracts of journals, books, book chapters, technical reports and dissertations in psychology and related disciplines.</field>
+    <field name="keywords">psychinfo</field>
+    <field name="keywords">psych info</field>    
+    <field name="keywords">psychinfo online</field>
+    <field name="keywords">psychinfo csa</field>
+    <field name="keywords">psychology information</field>
+    <field name="keywords">psychology info</field>
+    <field name="keywords">psycinfo</field>
+    <field name="keywords">psyc info</field>
+    <field name="keywords">psycinfo online</field>
+    <field name="keywords">psycinfo csa</field>
+  </doc>
+  <doc>
+    <field name="id">pubmed</field>
+    <field name="title">PubMed</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2382734</field>
+    <field name="bibid">.b2382734</field>
+    <field name="description">Biomedical articles from MEDLINE and additional life science journals.</field>
+    <field name="keywords">pubmed</field>
+    <field name="keywords">pubmed online</field>
+    <field name="keywords">pub med</field>
+    <field name="keywords">index medicus</field>
+    <field name="keywords">medline</field>
+    <field name="keywords">biomedical articles</field>
+  </doc>
+  <doc>
+    <field name="id">retrospective</field>
+    <field name="title">Reader's Guide Retrospective</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2908207</field>
+    <field name="bibid">.b2908207</field>
+    <field name="description">Provides indexing of general-interest periodicals published in the United States and reflects the history of 20th century America.</field>
+    <field name="keywords">reader's guide to periodicals</field>
+    <field name="keywords">reader's guide to periodical literature</field>
+    <field name="keywords">reader's guide retrospective</field>
+    <field name="keywords">reader's guide to periodical</field>
+    <field name="keywords">readers guide to periodicals</field>
+    <field name="keywords">readers guide to periodical literature</field>
+    <field name="keywords">readers guide retrospective</field>
+    <field name="keywords">readers guide to periodical</field>
+  </doc>
+  <doc>
+    <field name="id">reserves</field>
+    <field name="title">Reserves</field>
+    <field name="url">http://tripodclassic.brynmawr.edu/search/r</field>
+    <field name="bibid">none</field>
+    <field name="description">Reserves available at campus libraries, including books, videos, and sound recordings.</field>
+    <field name="keywords">reserves</field>
+    <field name="keywords">course reserves</field>
+    <field name="keywords">class reserves</field>
+    <field name="keywords">in-library reserves</field>
+    <field name="keywords">in library reserves</field>
+    <field name="keywords">books on reserve</field>
+    <field name="keywords">electronic reserves</field>
+    <field name="keywords">reserved readings</field>
+    <field name="keywords">reserved books</field>
+    <field name="keywords">readings on reserve</field>
+    <field name="keywords">reserve reading</field>
+    <field name="keywords">reserve books</field>
+  </doc>
+  <doc>
+    <field name="id">rilm</field>
+    <field name="title">RILM Abstracts of Music Literature</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3200822</field>
+    <field name="bibid">.b3200822</field>
+    <field name="description">Covers material published in music and various other fields as they relate to music.</field>
+    <field name="keywords">rilm</field>
+    <field name="keywords">rilm abstracts</field>
+    <field name="keywords">rilm abstracts of music</field>
+    <field name="keywords">rilm abstracts of music literature</field>
+    <field name="keywords">international repertory of music literature</field>
+    <field name="keywords">répertoire international de littérature musicale</field>
+    <field name="keywords">repertoire international de litterature musicale</field>
+    <field name="keywords">music abstracts</field>
+    <field name="keywords">musical abstracts</field>
+  </doc>
+  <doc>
+    <field name="id">scholarship_bmc</field>
+    <field name="title">Scholarship, Research, and Creative Work at Bryn Mawr College</field>
+    <field name="url">http://repository.brynmawr.edu</field>
+    <field name="bibid">none</field>
+    <field name="description">An open access repository of the scholarship and publications of the Bryn Mawr community.</field>
+    <field name="keywords">bryn mawr repository</field>
+    <field name="keywords">bryn mawr research</field>
+    <field name="keywords">bryn mawr scholarship</field>
+    <field name="keywords">bryn mawr institutional repository</field>
+    <field name="keywords">bryn mawr ir</field>
+    <field name="keywords">bryn mawr creative work</field>
+    <field name="keywords">bryn mawr creative writing</field>
+    <field name="keywords">bryn mawr college scholarship</field>
+    <field name="keywords">bryn mawr college research</field>
+    <field name="keywords">bryn mawr college creative writing</field>
+    <field name="keywords">bmc institutional repository</field>
+  </doc>
+  <doc>
+    <field name="id">science</field>
+    <field name="title">Science</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3811286</field>
+    <field name="bibid">.b3811286</field>
+    <field name="description">Leading journal of original scientific research, news and commentary published by the American Association for the Advancement of Science.</field>
+    <field name="keywords">science</field>
+    <field name="keywords">science journal</field>
+    <field name="keywords">science magazine</field>
+    <field name="keywords">scientific monthly</field>
+  </doc>
+  <doc>
+    <field name="id">sciencedirect</field>
+    <field name="title">ScienceDirect</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2519940</field>
+    <field name="bibid">.b2519940</field>
+    <field name="description">Full-text,online access to journal articles in the life, physical, medical, technical, and social sciences.</field>
+    <field name="keywords">sciencedirect</field>
+    <field name="keywords">science direct</field>
+    <field name="keywords">science direct online</field>
+    <field name="keywords">elsevier science</field>
+  </doc>
+  <doc>
+    <field name="id">scifinder</field>
+    <field name="title">Scifinder Scholar</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2456950</field>
+    <field name="bibid">.b2456950</field>
+    <field name="description">Access to CAplus, a database of chemical literature and U.S. and foreign chemical-related patents, CASREACT, and the Registry database from Chemical Abstracts Service.</field>
+    <field name="keywords">scifinder</field>
+    <field name="keywords">scifinder scholar</field>
+    <field name="keywords">scifinderscholar</field>
+    <field name="keywords">scifinder online</field>
+    <field name="keywords">sci finder</field>
+    <field name="keywords">caplus</field>
+    <field name="keywords">casreact</field>
+    <field name="keywords">registry database for chemical abstracts service</field>
+    <field name="keywords">chemical abstracts service</field>   
+  </doc>
+  <doc>
+    <field name="id">social_work_abstracts</field>
+    <field name="title">Social Work Abstracts</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3582318</field>
+    <field name="bibid">.b3582318</field>
+    <field name="description">Abstracts of journal articles and dissertations in social work and related areas.</field>
+    <field name="keywords">social work abstracts</field>
+    <field name="keywords">socialwork abstracts</field>
+    <field name="keywords">social work abstracts online</field>
+    <field name="keywords">social work articles</field>
+    <field name="keywords">swab</field>
+  </doc>
+  <doc>
+    <field name="id">soc_abstracts</field>
+    <field name="title">Sociological Abstracts</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2676804</field>
+    <field name="bibid">.b2676804</field>
+    <field name="description">Abstracts of journal articles, books, book chapters, dissertations and conference papers in the fields of sociology, social work and related disciplines in the social and behavioral sciences.</field>
+    <field name="keywords">sociological abstracts</field>
+    <field name="keywords">sociological abstract</field>
+    <field name="keywords">sociology abstract</field>
+    <field name="keywords">sociology</field>
+    <field name="keywords">sociology journal articles</field>
+    <field name="keywords">sociology articles</field>
+    <field name="keywords">soc abs</field>
+  </doc>
+  <doc>
+    <field name="id">economist</field>
+    <field name="title">The Economist</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3227392</field>
+    <field name="bibid">.b3227392</field>
+    <field name="description">Weekly news magazine focused on international politics, business news, and opinion.</field>
+    <field name="keywords">economist</field>
+    <field name="keywords">economist magazine</field>
+  </doc>
+  <doc>
+    <field name="id">nation</field>
+    <field name="title">The Nation</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3231230</field>
+    <field name="bibid">.b3231230</field>
+    <field name="description">Weekly U.S. magazine devoted to politics and culture.</field>
+    <field name="keywords">nation</field>
+    <field name="keywords">nation magazine</field>
+    <field name="keywords">nation weekly</field>
+  </doc>
+  <doc>
+    <field name="id">times</field>
+    <field name="title">The Times</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3233338</field>
+    <field name="bibid">.b3233338</field>
+    <field name="description">British daily national newspaper, first published in London in 1785.</field>
+    <field name="keywords">times</field>
+    <field name="keywords">times london</field>
+    <field name="keywords">the times</field>
+    <field name="keywords">times newspaper</field>
+    <field name="keywords">times uk</field>
+    <field name="keywords">london times</field>
+    <field name="keywords">times of london</field>
+    <field name="keywords">daily universal register</field>
+  </doc>
+  <doc>
+    <field name="id">time_magazine</field>
+    <field name="title">Time</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3752366</field>
+    <field name="bibid">.b3752366</field>
+    <field name="description">American weekly news magazine.</field>
+    <field name="keywords">time</field>
+    <field name="keywords">time magazine</field>
+    <field name="keywords">time news</field>
+    <field name="keywords">time news weekly</field>
+    <field name="keywords">time online</field>
+    <field name="keywords">time magazine online</field>
+  </doc>
+  <doc>
+    <field name="id">tlg</field>
+    <field name="title">TLG Online</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2602241</field>
+    <field name="bibid">.b2602241</field>
+    <field name="description">Full-text database of primary sources covering Greek literature from Homer to the fall of Byzantium.</field>
+    <field name="keywords">tlg</field>
+    <field name="keywords">tlg online</field>
+    <field name="keywords">thesaurus linguae graecae</field>
+    <field name="keywords">thesaurus linguae graecae project</field>
+    <field name="keywords">thesaurus linguae</field>
+    <field name="keywords">linguae graecae</field>
+  </doc>
+  <doc>
+    <field name="id">tocsin</field>
+    <field name="title">TOCS-IN</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2556703</field>
+    <field name="bibid">.b2556703</field>
+    <field name="description">Tables of contents from a selection of Classics, Near Eastern Studies, and Religion journals.</field>
+    <field name="keywords">tocsin</field>
+    <field name="keywords">tables of contents of journals of interest to classics</field>
+    <field name="keywords">classics tocs</field>
+    <field name="keywords">classics tables of contents</field>
+    <field name="keywords">tocs</field>
+    <field name="keywords">tocs in</field>
+  </doc>
+  <doc>
+    <field name="id">triarte</field>
+    <field name="title">TriArte: Art and Artifact Collections</field>
+    <field name="url">http://triarte.brynmawr.edu/</field>
+    <field name="bibid">none</field>
+    <field name="description">Art and artifacts from Bryn Mawr, Haverford, and Swarthmore Colleges.</field>
+    <field name="keywords">triarte</field>
+    <field name="keywords">triart</field>
+    <field name="keywords">tri-arte</field>
+    <field name="keywords">triarte art and artifact collections</field>
+    <field name="keywords">triarte art and artifacts</field>
+    <field name="keywords">triarte art</field>
+    <field name="keywords">triarte artifacts</field>
+    <field name="keywords">tri-college art</field>
+    <field name="keywords">tri-art</field>
+  </doc>
+  <doc>
+    <field name="id">triceratops</field>
+    <field name="title">Triceratops</field>
+    <field name="url">http://triceratops.brynmawr.edu/dspace/</field>
+    <field name="bibid">none</field>
+    <field name="description">Digital materials associated with the research and scholarship of Bryn Mawr, Haverford, and Swarthmore Colleges as well as materials of historical value to the Colleges.</field>
+    <field name="keywords">triceratops</field>
+    <field name="keywords">tricollege libraries institutional repository</field>
+    <field name="keywords">tri-college libraries institutional repository</field>
+    <field name="keywords">institutional repository</field>
+    <field name="keywords">tricollege digital collections</field>
+    <field name="keywords">tri-college digital collections</field>
+    <field name="keywords">trico digital collections</field>
+    <field name="keywords">trico institutional repository</field>
+    <field name="keywords">trico ir</field>
+  </doc>
+  <doc>
+    <field name="id">triptych</field>
+    <field name="title">Triptych</field>
+    <field name="url">http://triptych.brynmawr.edu/</field>
+    <field name="bibid">none</field>
+    <field name="description">Access to the digital collections of Bryn Mawr College Special Collections, Haverford College Special Collections, Swarthmore College Friends Historical Library and Swarthmore College Peace Collection.</field>
+    <field name="keywords">tryptych</field>
+    <field name="keywords">triptych</field>
+    <field name="keywords">triptic</field>
+    <field name="keywords">triptich</field>
+    <field name="keywords">tryptich</field>
+    <field name="keywords">special collections online</field>
+    <field name="keywords">online special collections</field>
+    <field name="keywords">digital special collections</field>
+    <field name="keywords">digital rare books</field>
+  </doc>
+  <doc>
+    <field name="id">variations</field>
+    <field name="title">Variations: Digital Music Library</field>
+    <field name="url">http://varweb.haverford.edu/variations/use/</field>
+    <field name="bibid">none</field>
+    <field name="description">Listen to the Tri-College online music collection.</field>
+    <field name="keywords">variations</field>
+    <field name="keywords">variations digital music</field>
+    <field name="keywords">variations digital music library</field>
+    <field name="keywords">tri-college music library</field>
+    <field name="keywords">tri-college digital music library</field>
+    <field name="keywords">haverford digital music</field>
+    <field name="keywords">bryn mawr digital music</field>
+    <field name="keywords">swarthmore digital music</field>
+    <field name="keywords">tri-college music online</field>
+    <field name="keywords">tricollege music online</field>
+    <field name="keywords">streaming music</field>
+    <field name="keywords">online music</field>
+  </doc>
+  <doc>
+    <field name="id">webofk</field>
+    <field name="title">Web of Knowledge</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2664502</field>
+    <field name="bibid">.b2664502</field>
+    <field name="description">Access to the Social Sciences Citation Index, Science Citation Index, and Arts and Humanities Citation Index. Search for scholarly articles in any discipline, or for articles that cite a known author or work. Go to the Web of Science tab for a cited reference search.</field>
+    <field name="keywords">web of knowledge</field>
+    <field name="keywords">isi web of knowledge</field>
+    <field name="keywords">web of science</field>
+    <field name="keywords">isi web of science</field>
+    <field name="keywords">institute for scientific information</field>
+    <field name="keywords">arts and humanities citation index</field>
+    <field name="keywords">arts and humanities citations</field>
+    <field name="keywords">social sciences citation index</field>
+    <field name="keywords">achi</field>
+    <field name="keywords">citation search</field>
+    <field name="keywords">search citations</field>
+    <field name="keywords">cited reference search</field>
+    <field name="keywords">science citation index</field>
+  </doc>
+  <doc>
+    <field name="id">womens_studies</field>
+    <field name="title">Women's Studies International</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2649854</field>
+    <field name="bibid">.b2649854</field>
+    <field name="description">Citations and abstracts of journal articles, books, book chapters, newspapers, dissertations and bulletins, in the core areas of women's studies.</field>
+    <field name="keywords">womens studies international</field>
+    <field name="keywords">women's studies international</field>
+    <field name="keywords">womens studies</field>
+    <field name="keywords">women's studies</field>
+    <field name="keywords">women study international</field>
+    <field name="keywords">women's study international</field>
+  </doc>
+  <doc>
+    <field name="id">wdi</field>
+    <field name="title">World Development Indicators</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3808198</field>
+    <field name="bibid">.b3808198</field>
+    <field name="description">The primary World Bank collection of development indicators, compiled from officially-recognized international sources.</field>
+    <field name="keywords">world development indicators</field>
+    <field name="keywords">world development data</field>
+    <field name="keywords">global development data</field>
+    <field name="keywords">global development indicators</field>
+    <field name="keywords">world bank data</field>
+    <field name="keywords">world bank indicators</field>
+    <field name="keywords">development indicators</field>
+  </doc>
+  <doc>
+    <field name="id">worldcat</field>
+    <field name="title">WorldCat</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2365368</field>
+    <field name="bibid">.b2365368</field>
+    <field name="description">A catalog of the holdings of books, journals, and other materials held by libraries worldwide.</field>
+    <field name="keywords">worldcat</field>
+    <field name="keywords">worldcat.org</field>
+    <field name="keywords">worldcat org</field>
+    <field name="keywords">firstsearch</field>
+    <field name="keywords">OCLC firstsearch</field>
+    <field name="keywords">first search</field>
+    <field name="keywords">world cat</field>
+    <field name="keywords">OCLC first search</field>
+  </doc>
+  <doc>
+    <field name="id">worldwide_political</field>
+    <field name="title">Worldwide Political Science Abstracts</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2564313</field>
+    <field name="bibid">.b2564313</field>
+    <field name="description">Citations and abstracts of journals in political science and related fields including international relations, law, and public administration/policy.</field>
+    <field name="keywords">wpsa</field>
+    <field name="keywords">worldwide political science abstracts</field>
+    <field name="keywords">worldwide political science</field>
+    <field name="keywords">worldwide polysci absracts</field>
+    <field name="keywords">political science abstracts</field>
+  </doc>
+  <doc>
+    <field name="id">quaker</field>
+    <field name="title">Quaker History</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3756232</field>
+    <field name="bibid">.b3756232</field>
+    <field name="description">Semi-annual publication featuring articles on Quaker contributions to issues such as social justice, education and literature.  Also includes book and article reviews.</field>
+    <field name="keywords">quaker</field>
+    <field name="keywords">quakers</field>
+    <field name="keywords">quacker</field>
+    <field name="keywords">quackers</field>
+    <field name="keywords">quaker history</field>
+    <field name="keywords">quakers history</field>
+    <field name="keywords">history of quakers</field>
+    <field name="keywords">quakerism</field>
+    <field name="keywords">society of friends</field>
+  </doc>
+  <doc>
+    <field name="id">dram</field>
+    <field name="title">The Database of Recorded American Music</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2880490</field>
+    <field name="bibid">.b2880490</field>
+    <field name="description">A collection of sound recordings documenting American music not generally covered by commercial recording companies.</field>
+    <field name="keywords">dram</field>
+    <field name="keywords">american music</field>
+    <field name="keywords">independent music</field>
+    <field name="keywords">independent labels</field>
+  </doc>
+  <doc>
+    <field name="id">cwmusic</field>
+    <field name="title">Contemporary World Music </field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b3535260</field>
+    <field name="bibid">.b3535260</field>    
+    <field name="description">A database of music from around the world, including genres such as: reggae, worldbeat, neo-traditional, world fusion, Balkanic jazz, African film, Bollywood, Arab swing and jazz, Indian classical, fado, flamenco, klezmer, zydeco, gospel, gagaku and more.</field>
+    <field name="keywords">world music</field>
+    <field name="keywords">music alexander street</field>
+  </doc>
+  <doc>
+    <field name="id">sgsound</field>
+    <field name="title">Smithsonian Global Sound</field>
+    <field name="url">http://tripod.brynmawr.edu/find/Record/.b2620964</field>
+    <field name="bibid">.b2620964</field>
+    <field name="description">Provides online audio recordings of American folk, blues, bluegrass, jazz, spoken word, and world music from the Smithsonian Folkways label and others.</field>
+    <field name="keywords">bluegrass music</field>
+    <field name="keywords">folk music</field>
+    <field name="keywords">jazz</field>
+    <field name="keywords">blues</field>
+  </doc> 
+  <!-- Note: for lib hours the url and description fields must -->
+  <!-- the BMC, HC, and SC order and the three links and three -->
+  <!-- institutions much be separated by a semicolon -->
+  <doc>
+    <field name="id">libhours</field>
+    <field name="title">Library Hours</field>
+    <field name="url">http://www.brynmawr.edu/is/hours.html;http://library.haverford.edu/hours/;http://www.swarthmore.edu/libraries/hours.xml</field>
+    <field name="bibid">none</field>
+    <field name="description">Bryn Mawr;Haverford;Swarthmore</field>
+    <field name="keywords">hrs</field>
+    <field name="keywords">hour</field>
+    <field name="keywords">hours</field>
+    <field name="keywords">library hour</field>
+    <field name="keywords">library hours</field>
+    <field name="keywords">bmc hour</field>
+    <field name="keywords">bmc hours</field>
+    <field name="keywords">hc hour</field>
+    <field name="keywords">hc hours</field>
+    <field name="keywords">sc hour</field>
+    <field name="keywords">sc hours</field>
+    <field name="keywords">bryn mawr library hour</field>
+    <field name="keywords">bryn mawr library hours</field>
+    <field name="keywords">haverford library hour</field>
+    <field name="keywords">haverford library hours</field>
+    <field name="keywords">swarthmore library hour</field>
+    <field name="keywords">swarthmore library hours</field>
+</doc>
+</add>

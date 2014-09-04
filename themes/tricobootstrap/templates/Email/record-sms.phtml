@@ -1,0 +1,40 @@
+<?
+    // This is a text-only email template; do not include HTML!
+
+    // If this record supports real-time status, we'll assume it's a local
+    // resource and display call number/location/title before URL; otherwise,
+    // we'll just show URL and title.  This prioritization is important,
+    // since text messages can be short, and we want the most important stuff
+    // at the top!
+    if ($this->driver->supportsAjaxStatus()) {
+        $holdings = $this->driver->getRealTimeHoldings();
+
+        // trico edit 2014.04.22 ah - user-entered location preference.
+        // (vufind core has a bunch of guesswork logic here)
+        $items = array();
+        foreach ($holdings['items'] as $items_location) {
+          foreach ($items_location as $key=>$item) {
+            $items[$item['number']] = $item;
+          }
+        }
+
+        // cdm stuff doesn't need to have a location display, right?
+        // just the link should be sufficient.
+        if (strpos($this->driver->getUniqueId(), "cdm-") !== 0) {
+            $loc = $items[$this->location]['location'];
+            $callno = $items[$this->location]['callnumber'];
+        }
+
+        if ($callno) {
+            echo $this->translate('callnumber_abbrev') . ': ' . trim($callno) . "\n";
+        }
+        if ($loc) {
+            echo $this->translate('Location') . ': ' . trim($loc) . "\n";
+        }
+        echo $this->driver->getBreadcrumb() . "\n";
+        echo $this->serverUrl($this->recordLink()->getUrl($this->driver)) . "\n";
+    } else {
+        echo $this->serverUrl($this->recordLink()->getUrl($this->driver)) . "\n";
+        echo $this->driver->getBreadcrumb() . "\n";
+    }
+?>

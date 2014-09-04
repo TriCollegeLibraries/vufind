@@ -1,0 +1,50 @@
+<?
+  // Set page title.
+  $this->headTitle($this->translate('Tripod | Books & More'));
+
+  // Load search actions and settings (if any):
+  $options = $this->searchOptions($this->searchClassId);
+  $basicSearch = $options->getSearchAction();
+  $advSearch = $options->getAdvancedSearchAction();
+  // This re-renders the searchbox with the searchclassid set as desired.
+  // it's actually inserted in the page in layout.phtml.
+  $this->layout()->searchbox = $this->render('search/searchbox.phtml');
+?>
+    <div class="bookscontent">
+    <div class="booksright">
+      <h2><img src="<?=$this->imageLink('magnifyglass.png')?>" alt="" border="0" /> 
+      Search Tips</h2>
+          <span style="font-size:2pt;"><br /></span>
+    <strong>Phrase Searching and Title Searching</strong> <br />
+    You can use double  quotes to search for a series of words in a particular order.
+    <p><span class="greentext">&quot;As  You Like It&quot;</span> will give more precise  results than <span class="greentext">As You Like It</span>.</p>
+    <strong>Wildcard Searching</strong><br />
+    If you want to search  for multiple variations of a word, you can substitute a special symbol (called  a &quot;wildcard&quot;) for one or more letters.<br /><br />
+    You can use * to represent 0 or many characters. <br />
+    You can use ? to represent one single character. <br />
+    <br />
+    <span class="greentext">music*</span> will find music, musical, musician , etc., and <span class="greentext">wom?n</span> will find woman, women and womyn.<br />
+    <br />
+    Want to get more  out of the basic search box? Try <a href="<?=$this->url('help-home')?>?topic=search" target="_blank">Searching Tips</a> for  some powerful new tools.
+    <br />
+    <br />
+      <strong>Advanced Searching</strong><br />
+    Our <a href="<?=$this->url($advSearch)?>">Advanced Search</a> tool lets you easily search multiple fields at the same time  and combine terms in complex ways..
+    </div>
+
+    <div class="booksmiddle">
+      <strong>Not sure where to start your search? Want to discover something new?</strong>
+      <p>&nbsp;</p>
+      <p>You can try our <a href="<?=$this->url('browse-home')?>">Explore Books &  More</a> tool to navigate our collection by combining factors like author name, era and topic.</p>
+      <p>&nbsp;</p>
+      <p>You can also try the <a href="<?=$this->url('alphabrowse-home')?>">Browse Books & More</a><img src="<?=$this->imageLink('mapICON.png')?>" alt="" border="0"/> tool to view neighboring items by author, title, and topic.</p>
+    </div>
+
+    <div class="booksleft">
+      <p><img src="<?=$this->imageLink('booksICON.png')?>" border="0" alt="" />
+      The <strong>Books &amp; More</strong> section of Tripod  enables patrons to search the Tri-College libraries’ collection of books,  journal titles, audio/video materials, databases and more.</p>
+<p>&nbsp;</p>
+    </div>
+
+    <div class="clear"></div>
+    </div>

@@ -1,0 +1,65 @@
+<?
+    // Set page title.
+    $this->headTitle($this->translate('Tripod | Home'));
+
+    // Set default value if necessary:
+    if (!isset($this->searchClassId)) {
+        $this->searchClassId = 'Combined';
+    }
+
+    // Load search actions and settings (if any):
+    $options = $this->searchOptions($this->searchClassId);
+    $basicSearch = $options->getSearchAction();
+    $advSearch = $options->getAdvancedSearchAction();
+    // This re-renders the searchbox with the searchclassid set as desired.
+    // it's actually inserted in the page in layout.phtml.
+    $this->layout()->searchbox = $this->render('search/searchbox.phtml');
+?>
+<div class="homecontent">
+    <div class="hometop">
+      <div id="boilerplate">
+
+      <div id="twitter"></div>
+
+       <p><strong>Tripod</strong> is the TriCollege Libraries' catalog. Here you’ll find books and journals, articles and archives, films and photographs, sound recordings and scores, images and more, in print and online. For more information about our collections, visit:</p>
+       <ul class="home">
+        <li class="red"><a href="http://www.brynmawr.edu/library/index.html">Bryn Mawr College Library</a></li>
+        <li class="blue"><a href="http://library.haverford.edu/">Haverford College Libraries</a></li>
+        <li class="yellow"><a href="http://www.swarthmore.edu/libraries.xml">Swarthmore College Libraries</a></li>
+        </ul>
+
+    </div>
+    </div>
+
+    <div class="columns" style="bacground-color: #C0C0C0">
+      <div class="column1">
+      <h2><img src="<?=$this->imageLink('magnifyglass.png')?>" alt="" border="0" /> Search Tips</h2>
+          <br />
+          <strong>Phrase Searching and Title Searching</strong> <br />
+          Type quotation marks around the phrase or the exact title.<br /><br/>
+          <p><span class="greentext">"global warming"</span> will give more precise results than <span class="greentext">global warming</span></p>
+    </div>
+    <div class="column2">
+      <div class="column2a">
+          <strong>Combining Terms, Words or Phrases</strong><br />
+          Type AND and then type the word or phrase to include both.
+          <p class="greentext">film AND soundtrack</p>
+          Type OR and then type the word or phrase to search for either one, the other, or both.
+          <p class="greentext">football OR soccer</p>
+          Type NOT and then type the word or phrase to exclude.
+          <p class="greentext">celtic NOT irish</p>
+<br /><br /><br />
+      </div>
+      <div class="column2b">
+          <strong>Wildcard Searching</strong><br />
+          To search for multiple variations of a word,  substitute a "wildcard" for one or more letters.<br /><br />
+          Use * to represent multiple characters. <br />
+          Use ? to represent a single character. <br /><br />
+          <span class="greentext">music*</span> will find music, musical, musician , etc., and <span class="greentext">wom?n</span> will find woman, women and womyn.<br /><br />
+          Advanced Search lets you easily search multiple fields at the same time and combine terms in complex ways.
+      </div>
+    </div>
+<br /><br /><br />
+    </div>
+<div class="clear"></div>
+</div>

@@ -1,0 +1,13 @@
+<p>
+  No Bryn Mawr, Haverford, or Swarthmore email address?
+  <? $link_text = "Enter your name and barcode"; ?>
+  <? if ($favoritesLink): ?>Sorry, favorites lists are currently only available to campus members.
+  <? else: ?>
+    <? if ($holdLink): ?><a target=_blank href="<?=$holdLink;?>"><?=$link_text;?></a> to place your hold
+    <? elseif ($bookingLink): ?><a target=_blank href="<?=$bookingLink;?>"><?=$link_text;?></a> to book your item
+    <? else: ?>
+    <a target=_blank href="http://tripodclassic.brynmawr.edu/patroninfo/"><?=$link_text;?></a> to view your account
+    <? endif; ?>
+    on Tripod Classic.
+  <? endif; ?>
+</p>

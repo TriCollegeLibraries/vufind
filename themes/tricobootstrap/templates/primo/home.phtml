@@ -1,0 +1,55 @@
+<?
+    // Set page title.
+    $this->headTitle($this->translate('Tripod | Articles Home'));
+
+    // Set default value if necessary:
+    if (!isset($this->searchClassId)) {
+        $this->searchClassId = 'Primo';
+    }
+
+    // Load search actions and settings (if any):
+    $options = $this->searchOptions($this->searchClassId);
+    $basicSearch = $options->getSearchAction();
+    $advSearch = $options->getAdvancedSearchAction();
+    // This re-renders the searchbox with the searchclassid set as desired.
+    // it's actually inserted in the page in layout.phtml.
+    $this->layout()->searchbox = $this->render('search/searchbox.phtml');
+?>
+  <div class="articlescontent">
+    <div class="articlesright">
+      <h2><img src="<?=$this->imageLink('magnifyglass.png')?>" alt="" border="0"/>Search Tips</h2>
+          <span style="font-size:2pt;"><br /></span>
+    <strong>Phrase Searching</strong> <br />
+    Type quotation marks around the phrase.
+    <p><span class="greentext">"global warming"</span> will give more precise results than <span class="greentext">global warming</span></p>
+      <strong>Excluding Words or Phases</strong>
+      Type NOT and then type the word or phrase to exclude.
+    <p class="greentext">celtic NOT irish</p>
+    <strong>Wildcard Searching</strong><br />
+    If you want to search  for multiple variations of a word, you can substitute a special symbol (called  a &quot;wildcard&quot;) for one or more letters.<br /><br />
+    Use * to represent multiple characters. <br />
+    Use ? to represent a single character. <br />
+    <br />
+    <span class="greentext">music*</span> will find music, musical, musician , etc., and <span class="greentext">wom?n</span> will find woman, women and womyn.<br />
+    <br />
+      <strong>Advanced Searching</strong><br />
+    Our <a href="<?=$this->url($advSearch)?>">Advanced Search</a> tool lets you easily search multiple fields at the same time  and combine terms in complex ways..
+    </div>
+
+    <div class="articlesmiddle">
+      <p><strong>Not finding what you  need?</strong> We have many subject-specific  databases that can help you find more information.</p>
+      <p>&nbsp;</p>
+      <p><img src="<?=$this->imageLink('mapICON.png')?>" alt="" border="0"/>Visit the <a href="http://libguides.brynmawr.edu/" target="_blank">Research Guides</a> page for more options.</p>
+    </div>
+
+    <div class="articlesleft">
+      <p><img src="<?=$this->imageLink('articlesICON.png')?>" border="0" alt="" />
+      <strong>Articles </strong>searches millions of journal  articles, many of them in full text and available through the Tri-College  Libraries.</p>
+ <p>&nbsp;</p>
+ <p> While  it doesn't provide access to everything the library has to offer, it is a good  starting point for your searches.</p>
+<p>&nbsp;</p>
+      <p>What's  included in <strong>Articles</strong>? Click <a href="<?=$this->url('help-home')?>?topic=included" class="help-link" title="What&apos;s Included in Articles">here</a> to find out.</p>
+    </div>
+
+    <div class="clear"></div>
+    </div>

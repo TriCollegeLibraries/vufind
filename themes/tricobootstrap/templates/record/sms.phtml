@@ -1,0 +1,80 @@
+<?
+  // Set page title.
+  $this->headTitle($this->translate('Text this'));
+
+  $holdings = $this->driver->getRealTimeHoldings();
+  $holdingsItems = array();
+  foreach ($holdings['items'] as $location) {
+    foreach ($location as $item) {
+      $holdingsItems[] = $item;
+    }
+  }
+
+  // Set up breadcrumbs:
+  $this->layout()->breadcrumbs = '<li>' . $this->getLastSearchLink($this->transEsc('Search Results'), '', '<span class="divider">&gt;</span> </li>')
+    . '<li>' . $this->recordLink()->getBreadcrumb($this->driver) . '<span class="divider">&gt;</span> </li>'
+    . '<li class="active">' . $this->transEsc('Text this') . '</li>';
+  
+  if ($this->validation == 'US') {
+    $phone_pattern = '^(\([2-9]\d{2}\)|[2-9]\d{2})[ -\.]?[2-9]\d{2}[-\.]?\d{4}$';
+  }
+?>
+<?=$this->flashmessages()?>
+<form method="post" action="" name="smsRecord" class="form-horizontal">
+  <input type="hidden" name="id" value="<?=$this->escapeHtmlAttr($this->driver->getUniqueId())?>" />
+  <input type="hidden" name="source" value="<?=$this->escapeHtmlAttr($this->driver->getResourceSource())?>" />
+  <div class="control-group">
+    <label class="control-label" for="sms_to"><?=$this->transEsc('Number')?>:</label>
+    <div class="controls">
+      <input id="sms_to" type="tel"<? if(isset($phone_pattern)): ?> pattern="<?=$phone_pattern ?>"<? endif ?> name="to" placeholder="<?=$this->transEsc('sms_phone_number')?>" oninvalid="$('#modal .icon-spinner').remove()"/>
+    </div>
+  </div>
+  <? if (is_array($this->carriers) && count($this->carriers) > 1): ?>
+    <div class="control-group">
+      <label class="control-label" for="sms_provider"><?=$this->transEsc('Provider')?>:</label>
+      <div class="controls">
+        <select id="sms_provider" name="provider">
+          <option selected="selected" value=""><?=$this->transEsc('Select your carrier')?></option>
+          <? foreach ($this->carriers as $val => $details): ?>
+            <option value="<?=$this->escapeHtmlAttr($val)?>"><?=$this->escapeHtml($details['name'])?></option>
+          <? endforeach; ?>
+        </select>
+      </div>
+    </div>
+  <? else: ?>
+    <? $keys = is_array($this->carriers) ? array_keys($this->carriers) : array(); ?>
+    <input type="hidden" name="provider" value="<?=isset($keys[0]) ? $keys[0] : ''?>" />
+  <? endif; ?>
+  <?=$this->recaptcha()->html($this->useRecaptcha) ?>
+  <? // trico edit 2014.04.14 ah - migrating location selection ?>
+  <div class="control-group">
+    <label class="control-label" for="sms_loc"><?=$this->transEsc('Location')?>:</label>
+    <div class="controls">
+      <? 
+      $isImage = false;
+      if($this->searchClassId == 'Primo' || $this->searchClassId == 'DigitalArchives'){
+        $isImage = true;
+        $imageVal = "Online";
+      } ?>
+      <? if($isImage): ?>
+        <label class="radio inline">          
+          <input type="radio" id="sms_loc" name="location" value="<?=$this->transEsc($imageVal) ?>" checked><?=$this->transEsc($imageVal) ?>
+        </label>
+      <? else: ?>
+        <? $i = 0; ?>
+        <? foreach ($holdingsItems as $holding): ?>
+          <label class="radio inline">
+            <input type="radio" id="sms_loc" name="location" value="<?=$isImage ? $this->transEsc($imageVal) : $this->transEsc($holding['number']); ?>" <? if($i == 0): ?>checked<? endif; ?>><?=$isImage ? $this->transEsc($imageVal) : $this->transEsc($holding['location']); ?>
+          <? $i++; ?>
+          </label>
+        <? endforeach; ?>
+      <? endif; ?>
+    </div>
+  </div>
+  <?=$this->recaptcha()->html($this->useRecaptcha) ?>
+  <div class="control-group">
+    <div class="controls">
+      <input class="btn btn-primary" type="submit" name="submit" value="<?=$this->transEsc('Send Text')?>"/>
+    </div>
+  </div>
+</form>

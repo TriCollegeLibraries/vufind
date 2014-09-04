@@ -1,0 +1,56 @@
+/** 2013-2-25 clobdel1@swarthmore.edu 
+ *  trico 
+ */
+
+import java.util.ArrayList;
+import java.util.Set;
+import org.marc4j.marc.*;
+import org.solrmarc.tools.Utils;
+import org.solrmarc.index.SolrIndexer;
+
+// NOTE: BeanShell does not support generics
+
+// define base level indexer so that its methods can be called from the script.
+// note: SolrIndexer code sets this value before the script methods are called.
+org.solrmarc.index.SolrIndexer indexer = null;
+
+// List of the formats that we want to limit the language facet to 008[35-37]
+private final static String[] ONLY008S = new String[] {
+    "x",
+    "v",
+    "z",
+    "q",
+    "1"
+};
+
+public Set getLanguages(Record record) {
+    // get the format for the Record
+    DataField field = (DataField) record.getVariableField("999");
+    Subfield subfield = null;
+    String formatString = null;
+    if (field != null) { 
+        subfield = field.getSubfield('e'); 
+    }
+    if (subfield != null) { 
+        formatString = (String) subfield.getData().toLowerCase();
+    }
+
+    if(formatString != null){
+        // Assume we do not need to limit the language field and set fields 
+        String languageFields = "008[35-37]:041a:041d:041h:041j";
+
+        for(String only : ONLY008S){
+            if (only.equals(formatString)) {
+                languageFields = "008[35-37]";
+            }
+        }
+
+        // get the set of fields
+        Set data = indexer.getFieldList(record, languageFields);
+
+       // return a set 
+       return data;
+    }
+
+    return null; 
+}

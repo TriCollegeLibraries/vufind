@@ -1,0 +1,10 @@
+---
+# This file contains search specifications used by the best bets module; for details
+# # on the workings of this file, see the comments in searchspecs.yaml.
+# #-----------------------------------------------------------------------------------
+AllFields:
+#  DismaxFields:
+#    - keywords
+  QueryFields:
+    keywords:
+      - [onephrase, ~]

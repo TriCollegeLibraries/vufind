@@ -1,0 +1,85 @@
+#logo {
+  width: 290px;
+  height: 100px;
+}
+
+#subnav {
+  width:555px;
+  height: 100px;
+  z-index:1;
+  margin-top: -100px;
+}
+
+.header {
+  padding-bottom: 0.4em;
+}
+
+.searchHomeContent {
+  text-align: center;
+}
+
+.searchForm {
+  text-align: left;
+}
+
+#flowpanes {
+  text-align: left;
+}
+
+.breadcrumbs {
+  margin-top: -18px;
+}
+
+.booksleft, .articlesleft {
+  width: 255px;
+}
+
+.booksmiddle, articlesmiddle {
+  padding: 5px;
+}
+
+.findit {
+  width: 100px;
+  background-image:none;
+  padding: 0;    
+}
+
+#flowpanes2{
+  margin-top: -6px;
+}
+#flowpanes2 .items #quickActive{
+  float: left;
+  margin-left: -10px;
+}
+#flowpanes2 .items #booksActive{
+  float:left;
+  margin-left: 85px;
+}
+#flowpanes2 .items #articlesActive{
+  float: left;
+  margin-left:180px;
+}
+#flowpanes2 .items #digcolActive{
+  float:left;
+  margin-left: 275px;
+}
+
+#flowtabs2 li.features{
+  background-position:172px 9px;
+}
+#flowtabs2 li.features a span.new{
+  letter-spacing: 0.7em;
+}
+
+#main-nav {
+  top:30px;
+}
+.main-nav-col1, .main-nav-col2, .main-nav-col3{
+  height:140px;
+}
+#main-nav .main-nav-offcomp{
+  background-position:81px 0;
+}
+#main-nav .main-nav-servs{
+  background-position:34em 0;
+} 

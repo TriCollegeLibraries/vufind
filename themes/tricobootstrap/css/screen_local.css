@@ -1,0 +1,15 @@
+.bibHoldings td {background:white !important;}
+.bibHoldings hr {margin-bottom: 0px;}
+.bibHoldings {margin-left: -3px;}
+.column, .span-adv, .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18, .span-19, .span-20, .span-21, .span-22, .span-23, .span-24 {float:left;margin-right:10px;}
+.image {margin-left:10px;}
+.span-adv {width: 225px;}
+.favorites {width: 128px;} 
+.span-6 {width:400px;}
+.span-6.last.channels  {width:320px;}
+.span-9 { width:422px;}
+.span-left  {width:70px; float:left; margin-left: 5px; margin-right: 8px;}
+.span-right {width:325px; display:block; overflow:hidden;}
+.span-left-bestbet, .span-left-guides  {width:35px; float:left; margin-left: 5px; margin-right: 8px;}
+.span-right-guides {width:360px; margin: -22px 0 10px 50px; display:block; overflow:hidden;}
+.span-right-bestbet {width:370px; margin: -22px 0 10px 40px; display:block; overflow:hidden;}
