@@ -461,6 +461,7 @@
       <str name="DBpath">${solr.solr.home:./solr}/alphabetical_browse/dewey_browse.db</str>
       <str name="field">dewey-raw</str>
       <str name="ignoreDiacritics">yes</str>
+      <str name="normalizer">org.vufind.util.DeweyCallNormalizer</str>
     </lst>
 
     <lst name="hierarchy">
